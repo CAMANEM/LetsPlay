@@ -7,20 +7,20 @@ You need to install wxWidgets, in this link you can see tutorials explaining the
 
 Or you can follow the next instructions for Linux installation:
 
-First, downdload wxWidgets last stable release "Source for Linux, macOS, etc" option at:
+1. Downdload wxWidgets last stable release "Source for Linux, macOS, etc" option at:
 https://www.wxwidgets.org/downloads/
 
-Second, Extract File.
+2. Extract File.
 
-Third, run these commands in terminal:
+3. Run these commands in terminal:
 
-  sudo apt install build-essential
-  sudo apt install libgtk2.0-dev
-  sudo apt install libgtk-3-dev
-  cd ~/wx/wxWidgets-3.1.3
-  mkdir gtk-build
-  cd gtk-build
-  ../configure
-  make -j3
-  sudo make install
-  sudo ldconfig
+       sudo apt install build-essential
+       sudo apt install libgtk2.0-dev
+       sudo apt install libgtk-3-dev
+       cd ~/wx/wxWidgets-3.1.3
+       mkdir gtk-build
+       cd gtk-build
+       ../configure
+       make -j3
+       sudo make install
+       sudo ldconfig
