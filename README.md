@@ -24,3 +24,4 @@ https://www.wxwidgets.org/downloads/
        make -j3
        sudo make install
        sudo ldconfig
+       sudo apt install libcanberra-gtk-module libcanberra-gtk3-module
