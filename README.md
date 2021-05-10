@@ -1,2 +1,2 @@
 # LetsPlay
-Algorithms and Data Structures II  - Project #2
+### Algorithms and Data Structures II  - Project #2 - CE
