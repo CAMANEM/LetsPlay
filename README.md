@@ -14,6 +14,7 @@ https://www.wxwidgets.org/downloads/
 
 3. On terminal:
 
+
   sudo apt install build-essential
   sudo apt install libgtk2.0-dev
   sudo apt install libgtk-3-dev
@@ -24,3 +25,4 @@ https://www.wxwidgets.org/downloads/
   make -j3
   sudo make install
   sudo ldconfig
+  
