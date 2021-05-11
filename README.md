@@ -3,7 +3,7 @@
 
 Requisites:
 
-C++ and SFML
+* C++ and SFML
 
 SFML installation on linux:
 
