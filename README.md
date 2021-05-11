@@ -1,17 +1,17 @@
 # LetsPlay
 ### Project #2 - Algorithms and Data Structures II - CE
 
-Requisites
+Requisites:
 
-You need to install wxWidgets, in this link you can see tutorials explaining the installation for Windows, MacOS and Linux: https://www.youtube.com/playlist?list=PL37oPRxdrWm5cgUy5VcGe4ckoKuFqdjko 
+C++ and SFML
 
-Or you can follow the next instructions for Linux installation:
-
-1. Downdload wxWidgets last stable release "Source for Linux, macOS, etc" option at:
-https://www.wxwidgets.org/downloads/
-
-2. Extract File.
-
-3. Run these commands in terminal:
+SFML installation on linux:
 
        sudo apt-get install libsfml-dev
+
+If using CLion, add to the CmakeLists.txt:
+
+        link_directories(SFML_LIBRARY_DIR)
+        include_directories(SFML_INCLUDE_DIR)
+        find_package(SFML 2.5.1 COMPONENTS system window graphics network audio)
+        target_link_libraries(SMFLTry sfml-graphics sfml-window sfml-system)
