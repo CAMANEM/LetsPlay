@@ -14,14 +14,4 @@ https://www.wxwidgets.org/downloads/
 
 3. Run these commands in terminal:
 
-       sudo apt install build-essential
-       sudo apt install libgtk2.0-dev
-       sudo apt install libgtk-3-dev
-       cd ~/wx/wxWidgets-3.1.3
-       mkdir gtk-build
-       cd gtk-build
-       ../configure
-       make -j3
-       sudo make install
-       sudo ldconfig
-       sudo apt install libcanberra-gtk-module libcanberra-gtk3-module
+       sudo apt-get install libsfml-dev
