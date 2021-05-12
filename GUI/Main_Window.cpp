@@ -2,10 +2,11 @@
 // Created by camanem on 12/5/21.
 //
 
+#include <iostream>
 #include "Main_Window.h"
 #include "spdlog/spdlog.h"
 #include "Puzzle_Window.h"
-
+#include "BPGame_Window.h"
 
 Main_Window::Main_Window() {
 
@@ -84,9 +85,16 @@ void Main_Window::button_animation(sf::Vector2i mouse_pos) {
 
     if (854 < x && x < 1275 && 476 < y && y < 516){
         puzzle.setColor(sf::Color::Red);
+        bpgame.setColor(sf::Color::White);
+
+    }
+    else if (950 < x && x < 1147 && 379 < y && y < 415){
+        bpgame.setColor(sf::Color::Blue);
+        puzzle.setColor(sf::Color::White);
     }
     else{
         puzzle.setColor(sf::Color::White);
+        bpgame.setColor(sf::Color::White);
     }
 }
 
@@ -98,6 +106,10 @@ void Main_Window::clickButton(sf::Vector2i mouse_pos) {
     if (854 < x && x < 1275 && 476 < y && y < 516){
         Puzzle_Window* puzzleWindow = new Puzzle_Window();
         puzzleWindow->Run(my_window);
+    }
+    else if (950 < x && x < 1147 && 379 < y && y < 415){
+        BPGame_Window* bpGameWindow = new BPGame_Window();
+        bpGameWindow->Run(my_window);
     }
 }
 
