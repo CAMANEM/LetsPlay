@@ -14,7 +14,7 @@ Main_Window::Main_Window() {
 
 void Main_Window::Run() {
 
-    sf::RenderWindow window(sf::VideoMode(1100, 900), "Let's Play");
+    sf::RenderWindow window(sf::VideoMode(1100, 900), "Let's Play", sf::Style::Titlebar | sf::Style::Close);
     my_window = &window;
     auto desktop = sf::VideoMode::getDesktopMode();
     sf::Vector2i center(desktop.width / 4, -desktop.height / 2);
@@ -62,11 +62,11 @@ void Main_Window::Run() {
                     window.close();
 
                 case sf::Event::MouseMoved:
-                    button_animation(sf::Mouse::getPosition());
+                    button_animation(sf::Mouse::getPosition(*my_window));
 
                 case sf::Event::MouseButtonPressed:
                     if (sf::Mouse::isButtonPressed(sf::Mouse::Left)){
-                        clickButton(sf::Mouse::getPosition());
+                        clickButton(sf::Mouse::getPosition(*my_window));
                     }
             }
         }
@@ -83,12 +83,12 @@ void Main_Window::button_animation(sf::Vector2i mouse_pos) {
     int x = mouse_pos.x;
     int y = mouse_pos.y;
 
-    if (854 < x && x < 1275 && 476 < y && y < 516){
+    if (370 < x && x < 796 && 411 < y && y < 450){
         puzzle.setColor(sf::Color::Red);
         bpgame.setColor(sf::Color::White);
 
     }
-    else if (950 < x && x < 1147 && 379 < y && y < 415){
+    else if (470 < x && x < 667 && 300 < y && y < 360){
         bpgame.setColor(sf::Color::Blue);
         puzzle.setColor(sf::Color::White);
     }
@@ -103,11 +103,11 @@ void Main_Window::clickButton(sf::Vector2i mouse_pos) {
     int x = mouse_pos.x;
     int y = mouse_pos.y;
 
-    if (854 < x && x < 1275 && 476 < y && y < 516){
+    if (370 < x && x < 796 && 411 < y && y < 450){
         Puzzle_Window* puzzleWindow = new Puzzle_Window();
         puzzleWindow->Run(my_window);
     }
-    else if (950 < x && x < 1147 && 379 < y && y < 415){
+    else if (470 < x && x < 667 && 300 < y && y < 360){
         BPGame_Window* bpGameWindow = new BPGame_Window();
         bpGameWindow->Run(my_window);
     }
