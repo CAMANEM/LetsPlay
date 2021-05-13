@@ -14,7 +14,7 @@ Main_Window::Main_Window() {
 
 void Main_Window::Run() {
 
-    sf::RenderWindow window(sf::VideoMode(1100, 900), "Let's Play", sf::Style::Titlebar | sf::Style::Close);
+    sf::RenderWindow window(sf::VideoMode(1100, 900), "Let's Play", sf::Style::Titlebar | sf::Style::Close  );
     my_window = &window;
     auto desktop = sf::VideoMode::getDesktopMode();
     sf::Vector2i center(desktop.width / 4, -desktop.height / 2);

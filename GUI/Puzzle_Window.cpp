@@ -3,6 +3,12 @@
 //
 
 #include "Puzzle_Window.h"
+#include <filesystem>
+#include <iostream>
+
+#include <unistd.h>
+#include <sys/types.h>
+#include <pwd.h>
 
 Puzzle_Window::Puzzle_Window() {
 
@@ -11,12 +17,20 @@ Puzzle_Window::Puzzle_Window() {
 
 void Puzzle_Window::Run(sf::RenderWindow *_window) {
 
+    //Prints directory content - Need at least C++ 17
+    // getpwuid(getuid())->pw_dir  this returns home directory
+    std::string path = "../Assets/Pictures";
+    for (const auto & entry : std::filesystem::directory_iterator(path)) {
+        std::cout << entry.path() << std::endl;
+    }
+
     bool back_button = false;
     sf::Texture texture;
     texture.loadFromFile("../Assets/Pictures/image.jpg");
     sf::Sprite sprite(texture);
     sprite.setPosition(100.0f, 100.0f);
     sf::Event event;
+
 
     while (!back_button && _window->isOpen()) {
         while (_window->pollEvent(event)) {

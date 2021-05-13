@@ -1,9 +1,10 @@
 # LetsPlay
 ### Project #2 - Algorithms and Data Structures II - CE
 
+
 Requisites:
 
-* C++ and SFML
+* SFML and C++ (at least C++ 17)
 
 SFML installation on linux:
 
