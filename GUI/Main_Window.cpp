@@ -20,6 +20,9 @@ void Main_Window::Run() {
     sf::Vector2i center(desktop.width / 4, -desktop.height / 2);
     window.setPosition(center);
 
+    Puzzle_Window* puzzleWindow = new Puzzle_Window();
+    puzzleWindow->Run(my_window);
+
     sf::Font font_t;
     sf::Font font_p;
     sf::Font font_b;
@@ -28,7 +31,7 @@ void Main_Window::Run() {
     if (!font_t.loadFromFile("../Assets/Fonts/THINK_ME_WICKED_DEMO.ttf")){
         spdlog::error("Main_Window: loading tittle font");
     }
-    if (!font_p.loadFromFile("../Assets/Fonts/PuzzlePieces-ld8y.ttf")){
+    if (!font_p.loadFromFile("../Assets/Fonts/Last Years Youth_DEMO.ttf")){
         spdlog::error("Main_Window: loading puzzle font");
     }
     if (!font_b.loadFromFile("../Assets/Fonts/Last Years Youth_DEMO.ttf")){
@@ -89,7 +92,7 @@ void Main_Window::button_animation(sf::Vector2i mouse_pos) {
 
     }
     else if (470 < x && x < 667 && 300 < y && y < 360){
-        bpgame.setColor(sf::Color::Blue);
+        bpgame.setColor(sf::Color::Cyan);
         puzzle.setColor(sf::Color::White);
     }
     else{
@@ -106,10 +109,12 @@ void Main_Window::clickButton(sf::Vector2i mouse_pos) {
     if (370 < x && x < 796 && 411 < y && y < 450){
         Puzzle_Window* puzzleWindow = new Puzzle_Window();
         puzzleWindow->Run(my_window);
+        free(puzzleWindow);
     }
     else if (470 < x && x < 667 && 300 < y && y < 360){
         BPGame_Window* bpGameWindow = new BPGame_Window();
         bpGameWindow->Run(my_window);
+        free(bpGameWindow);
     }
 }
 
