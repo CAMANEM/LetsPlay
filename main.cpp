@@ -10,5 +10,6 @@ int main() {
 
     XML hp = XML();
     hp.Construction("Fernando");
+    hp.Modification("Fernando", "NAME", "PABLO");
     return 0;
 }

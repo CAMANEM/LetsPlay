@@ -16,10 +16,12 @@ class XML {
 public:
     XML();
     void Construction(std::string name);
+    void Modification(std::string name, std::string element, std::string info);
 
 
 private:
     XMLDocument doc;
+    XMLElement* change;
 
 };
 

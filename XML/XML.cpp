@@ -21,11 +21,12 @@ void XML::Construction(std::string name) {
     doc.SaveFile(("../XML Files/"+name+".xml").c_str());
 
 
-//    static const char* xml =
-//            "<?xml version=\"1.0\"?>"
-//            "<ROOT> "
-//            "<NAME>" + a +"</NAME>"
-//            "<NAME>FERNANDO MONGE</NAME>"
-//            "</ROOT>";
+}
+
+void XML::Modification(std::string name, std::string element, std::string info) {
+    doc.LoadFile(("../XML Files/"+name+".xml").c_str());
+    change = doc.FirstChildElement("ROOT")->FirstChildElement(element.c_str());
+    change->SetText(info.c_str());
+    doc.SaveFile(("../XML Files/"+name+".xml").c_str());
 
 }
