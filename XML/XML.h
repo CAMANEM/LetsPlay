@@ -8,6 +8,7 @@
 #include "tinyxml2.h"
 #include <iostream>
 #include <string>
+#include <stdio.h>
 
 using namespace tinyxml2;
 
@@ -17,6 +18,7 @@ public:
     XML();
     void Construction(std::string name);
     void Modification(std::string name, std::string element, std::string info);
+    void Elimination(std::string name);
 
 
 private:

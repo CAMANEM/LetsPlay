@@ -29,4 +29,9 @@ void XML::Modification(std::string name, std::string element, std::string info) 
     change->SetText(info.c_str());
     doc.SaveFile(("../XML Files/"+name+".xml").c_str());
 
+
+}
+
+void XML::Elimination(std::string name) {
+    remove(("../XML Files/"+name+".xml").c_str());
 }
