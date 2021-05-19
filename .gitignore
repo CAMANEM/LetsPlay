@@ -197,3 +197,5 @@ CMakeUserPresets.json
 ### CMake Patch ###
 # External projects
 *-prefix/
+
+XML Files
