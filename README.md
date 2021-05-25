@@ -4,7 +4,14 @@
 
 Requisites:
 
-* SFML and C++ (at least C++ 17)
+* C++ (at least C++ 17)
+* SpdLog
+* SFML
+
+SpdLog installation on linux:
+
+    sudo apt update
+    sudo apt install libspdlog-dev
 
 SFML installation on linux:
 
