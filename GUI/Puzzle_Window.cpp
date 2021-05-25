@@ -62,7 +62,7 @@ void Puzzle_Window::Run(sf::RenderWindow *_window) {
         if (file_explorer_open){
             file_explorer_drawing();
         }
-        if (game_started){
+        else if (game_started){
             _window->draw(sprite);
         }
         _window->display();
@@ -196,7 +196,7 @@ void Puzzle_Window::playClicked() {
     rbackground.setSize(sf::Vector2f(1100, 900));
     rbackground.setPosition((1100-rbackground.getGlobalBounds().width)/2, (900-rbackground.getGlobalBounds().height)/2);
     rbackground.setFillColor(sf::Color::Black);
-    rbackground.setFillColor(sf::Color(0,0,0,200));
+    rbackground.setFillColor(sf::Color(0,0,0,150));
 
     rgeneral.setSize(sf::Vector2f(300, 500));
     rgeneral.setPosition((1100-rgeneral.getGlobalBounds().width)/2, (900-rgeneral.getGlobalBounds().height)/2);
@@ -271,7 +271,7 @@ void Puzzle_Window::loadImage() {
         sf::Image base_image;
         if (base_image.loadFromFile(path_selected)) {
             sf::Image image;
-            image.create(400, 500);
+            image.create(600, 700);
 //            Copy image1 on image2 at position (10, 10)
             image.copy(base_image, 10, 10);
             resizeImage(base_image, image);
