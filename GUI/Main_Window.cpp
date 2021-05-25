@@ -20,9 +20,6 @@ void Main_Window::Run() {
     sf::Vector2i center(desktop.width / 4, -desktop.height / 2);
     window.setPosition(center);
 
-    Puzzle_Window* puzzleWindow = new Puzzle_Window();
-    puzzleWindow->Run(my_window);
-
     sf::Font font_t;
     sf::Font font_p;
     sf::Font font_b;
