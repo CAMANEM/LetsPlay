@@ -18,7 +18,10 @@ private:
     bool back_button = false;
     bool file_explorer_open = false;
     bool game_started = false;
+    bool fragmentedImage = false;
 
+    std::vector<sf::Vector2f> pieces_positions;
+    std::vector<sf::Sprite> puzzle_pieces;
 
     std::vector<sf::Text> files_directions;
     std::string path_selected;
@@ -37,6 +40,16 @@ private:
     sf::Font font_f;
     sf::Text prev;
     sf::Text open;
+
+    sf::Text number;
+    sf::Text down;
+    sf::Text up;
+
+
+    void fragmentImage(int pieces);
+
+    // ______________________________________________________________________________
+
     /**
      * Code of Hapax, taken from https://en.sfml-dev.org/forums/index.php?topic=24954.0
      * @brief Resizes an image of any size to an especific size
