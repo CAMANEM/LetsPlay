@@ -7,7 +7,7 @@
 #include <iostream>
 #include <vector>
 #include "spdlog/spdlog.h"
-
+#include <string>
 
 #include <unistd.h>
 #include <sys/types.h>
@@ -54,6 +54,11 @@ void Puzzle_Window::Run(sf::RenderWindow *_window) {
                     if (sf::Mouse::isButtonPressed(sf::Mouse::Left)){
                         clickButton(sf::Mouse::getPosition(*_window));
                     }
+                    else if (sf::Mouse::isButtonPressed(sf::Mouse::Right) && game_started && !fragmentedImage){
+                        fragmentImage(std::stoi((std::string) number.getString()));
+                        fragmentedImage = true;
+                    }
+
             }
         }
         _window->clear();
@@ -63,12 +68,88 @@ void Puzzle_Window::Run(sf::RenderWindow *_window) {
             file_explorer_drawing();
         }
         else if (game_started){
-            _window->draw(sprite);
+            if (!fragmentedImage){
+                _window->draw(up);
+                _window->draw(number);
+                _window->draw(down);
+                _window->draw(sprite);
+            }
+            else if (fragmentedImage){
+            for (int i = 0; i < puzzle_pieces.size(); ++i) {
+                _window->draw(puzzle_pieces.at(i));
+            }
+            }
         }
         _window->display();
     }
 }
 
+
+
+void Puzzle_Window::fragmentImage(int pieces) {
+
+    // Calcular si se puede generar en una matriz nxn
+    int i_sqrt = sqrt(pieces);
+    float f_sqrt = sqrt(pieces);
+    int limit_i;
+
+    int fragments_width;
+    int fragments_height;
+
+    if (i_sqrt == f_sqrt){
+        fragments_width = sprite.getGlobalBounds().width / i_sqrt;
+        fragments_height = sprite.getGlobalBounds().height / i_sqrt;
+        limit_i = i_sqrt;
+    }
+    // Solo se divide en 2
+    else if (pieces == 2){
+        fragments_width = sprite.getGlobalBounds().width;
+        fragments_height = sprite.getGlobalBounds().height/2;
+        limit_i = 1;
+    }
+    // Numero a dividir es par
+    else if (pieces%2 == 0){
+        fragments_width = sprite.getGlobalBounds().width / 2;
+        limit_i = 2;
+        for (int i = 2; i < pieces; ++i) {
+            if (2*i == pieces){
+                fragments_height = sprite.getGlobalBounds().height/i;
+                break;
+            }
+        }
+    }
+    // Numero a fragmentar es impar
+    else{
+        fragments_width = sprite.getGlobalBounds().width;
+        fragments_height = sprite.getGlobalBounds().height/pieces;
+        limit_i = 1;
+    }
+
+    sf::Vector2f position = sprite.getPosition();
+    sf::Vector2f sector = sf::Vector2f(0.0f, 0.0f);
+
+    int i = 1;
+
+    while (puzzle_pieces.size() < pieces){
+        sf::Sprite piece;
+        piece.setPosition(position);
+        piece.setTexture(texture);
+        piece.setTextureRect(sf::IntRect(sector.x, sector.y, fragments_width, fragments_height));
+        pieces_positions.push_back(position);
+        puzzle_pieces.push_back(piece);
+
+        if (i < limit_i){
+            i++;
+            position.x = position.x + fragments_width +1;
+            sector.x = sector.x + fragments_width;
+        }
+        else{
+            i = 1;
+            position = sf::Vector2(sprite.getPosition().x, position.y + fragments_height+1);
+            sector = sf::Vector2f(0.0f, sector.y + fragments_height);
+        }
+    }
+}
 
 void Puzzle_Window::button_animation(sf::Vector2i mouse_pos) {
 
@@ -104,6 +185,14 @@ void Puzzle_Window::clickButton(sf::Vector2i mouse_pos) {
     }
     else if (file_explorer_open){
         fileExplorerClick(mouse);
+    }
+    else if (game_started){
+        if (up.getGlobalBounds().contains(mouse)){
+            number.setString(std::to_string(std::stoi((std::string) number.getString())+1));
+        }
+        else if (down.getGlobalBounds().contains(mouse) && 2 < std::stoi((std::string) number.getString())){
+            number.setString(std::to_string(std::stoi((std::string) number.getString())-1));
+        }
     }
 }
 
@@ -158,6 +247,9 @@ void Puzzle_Window::fileExplorerClick(sf::Vector2f mouse) {
     }
     else if (ropen.getGlobalBounds().contains(mouse)){
         loadImage();
+
+//        fragmentImage(36); // sacar eliminar
+
     }
     else{
         for (int i = 0; i < files_directions.size(); ++i) {
@@ -206,6 +298,11 @@ void Puzzle_Window::playClicked() {
     show_all.setString("Show All");
     show_all.setCharacterSize(30);
     show_all.setPosition(rgeneral.getPosition().x + 10, rgeneral.getPosition().y + 5);
+
+    open.setFont(font_f);
+    open.setString("Open");
+    open.setCharacterSize(30);
+    open.setPosition(show_all.getPosition().x + 205, show_all.getPosition().y);
 
     open.setFont(font_f);
     open.setString("Open");
@@ -281,8 +378,22 @@ void Puzzle_Window::loadImage() {
                                (900 - sprite.getGlobalBounds().height) / 2);
             file_explorer_open = false;
             game_started = true;
-            mywindow->draw(sprite);
-            mywindow->display();
+            // Boton de fragmentar imagen //
+            up.setFont(font_f);
+            up.setString("+");
+            up.setCharacterSize(30);
+            up.setPosition(50.0f, 300.0f);
+
+            number.setFont(font_f);
+            number.setString("2");
+            number.setCharacterSize(20);
+            number.setPosition(53.0f, 330.0f);
+
+            down.setFont(font_f);
+            down.setString("-");
+            down.setCharacterSize(30);
+            down.setPosition(54.0f, 340.0f);
+
         } else {
             files_directions.clear();
             std::string path = path_selected;
