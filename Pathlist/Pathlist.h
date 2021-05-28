@@ -12,8 +12,9 @@
 
 class Pathlist {
 public:
-    void insert(int cell[2]);
+    void insert(int x, int y);
     void remove();
+    void show();
     Pathlist();
 
 private:

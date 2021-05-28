@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include "../Tracklist/Tracklist.h"
+#include "../Pathlist/Pathlist.h"
 
 class Backtracking {
 public:
@@ -15,6 +16,19 @@ public:
 
     bool Path(int matrix[9][13], int i, int j);
     Backtracking();
+
+private:
+    bool visited[9][13]= {{true, true, true, true, true, true, true, true, true, true, true, true, true},
+                          {true, true, true, true, true, true, true, true, true, true, true, true, true},
+                          {true, true, true, true, true, true, true, true, true, true, true, true, true},
+                          {true, true, true, true, true, true, true, true, true, true, true, true, true},
+                          {true, true, true, true, true, true, true, true, true, true, true, true, true},
+                          {true, true, true, true, true, true, true, true, true, true, true, true, true},
+                          {true, true, true, true, true, true, true, true, true, true, true, true, true},
+                          {true, true, true, true, true, true, true, true, true, true, true, true, true},
+                          {true, true, true, true, true, true, true, true, true, true, true, true, true}};
+    int counter = 0;
+    bool founded = false;
 
 };
 

@@ -13,13 +13,16 @@ class Tracklist {
 public:
     void insert(int matrix[9][13]);
     void remove();
+    void show();
+    Tracknode* tail = nullptr;
     Tracklist();
 
 private:
     Tracknode* head = nullptr;
-    Tracknode* tail = nullptr;
+
     Tracknode* temporal = nullptr;
     int counter = 0;
+
 };
 
 

@@ -16,8 +16,6 @@ void Tracklist::insert(int matrix[9][13]) {
         tail = temporal;
         temporal->setNext(nullptr);
         counter++;
-        std::cout << "Radio Check" << std::endl;
-
 
     }else{
         tail->setNext(temporal);
@@ -36,7 +34,16 @@ void Tracklist::remove() {
         temporal = temporal->getNext();
     }
     prev->setNext(nullptr);
+    tail = prev;
     counter--;
     delete temporal;
 
+}
+void Tracklist::show() {
+    for(int i = 0; i<9; i++){
+        for (int j = 0; j < 13; ++j) {
+            std::cout << tail->matrix[i][j];
+        }
+        std::cout << std::endl;
+    }
 }

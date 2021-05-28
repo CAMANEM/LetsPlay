@@ -8,16 +8,14 @@ Pathlist::Pathlist() {
 
 }
 
-void Pathlist::insert(int cell[2]) {
+void Pathlist::insert(int x, int y) {
     temporal = new Pathnode;
-    temporal->setCell(cell);
+    temporal->setPos(x, y);
     if (counter == 0){
         head = temporal;
         tail = temporal;
         temporal->setNext(nullptr);
         counter++;
-        std::cout << "Radio Check" << std::endl;
-
 
     }else{
         tail->setNext(temporal);
@@ -36,7 +34,16 @@ void Pathlist::remove() {
         temporal = temporal->getNext();
     }
     prev->setNext(nullptr);
+    tail = prev;
     counter--;
     delete temporal;
 
+}
+
+void Pathlist::show() {
+    for (temporal = head; temporal != nullptr; temporal =  temporal->getNext()) {
+        std::cout << temporal->getX();
+        std::cout << "<->";
+        std::cout << temporal->getY() << std::endl;
+    }
 }

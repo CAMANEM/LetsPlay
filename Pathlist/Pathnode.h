@@ -8,14 +8,18 @@
 
 class Pathnode {
 public:
-    int cell[2];
-    void setCell(int cell[2]);
-    void setNext(Pathnode*);
+
+    void setPos(int x, int y);
+    void setNext(Pathnode* next);
     Pathnode* getNext();
+    int getX();
+    int getY();
     Pathnode();
 
 private:
     Pathnode* next = nullptr;
+    int x;
+    int y;
 };
 
 
