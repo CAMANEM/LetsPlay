@@ -46,6 +46,10 @@ private:
     sf::Text up;
 
 
+    /**
+     * @brief It fragments the image in the number of pieces indicated
+     * @param pieces is the number to fragment image
+     */
     void fragmentImage(int pieces);
 
     // ______________________________________________________________________________
