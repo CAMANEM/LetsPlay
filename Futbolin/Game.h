@@ -32,6 +32,12 @@ public:
     void updateGameLogic();
 
 private:
+    sf::RectangleShape LeftGoal;
+    sf::RectangleShape RightGoal;
+    int max_score;
+    int player_score;
+    int rival_score;
+
     sf::Vector2f m_mouse;
     sf::VideoMode videoMode;
     sf::RenderWindow* window;

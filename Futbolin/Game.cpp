@@ -19,7 +19,17 @@ void Game::initWindow(){
 }
 
 void Game::initGame(int squares, int score) {
+    LeftGoal.setSize(sf::Vector2f(99.615384f, 221.333333333f));
+    LeftGoal.setPosition(103.f, 290.83333333f);
+    LeftGoal.setFillColor(sf::Color(50, 105, 50));
+    RightGoal.setSize(sf::Vector2(99.615384f, 221.333333333f));
+    RightGoal.setPosition(102.5f+(12*99.615384f), 290.83333333f);
+    RightGoal.setFillColor(sf::Color(50, 105, 50));
+
     dragged = false;
+    max_score = score;
+    player_score = 0;
+    rival_score = 0;
     black = new Ball(sf::Vector2f(750, 400), 9.f, sf::Color::Black);
     board = new Board(squares);
     move = false;
@@ -158,7 +168,23 @@ void Game::updateGameLogic(){
     if (move && draggedBall->getVelocity() == sf::Vector2f(0.f, 0.f))
     {
         move = false;
+        float a = draggedBall->getPosition().x;
+        float b = draggedBall->getPosition().y;
+        if((103.0 < a && a < 205.0) && (291 < b && b < 512)){
+            black->setPosition(750.f, 300.f);
+            rival_score = rival_score + 1;
+            if(rival_score == max_score){
+                window->close();
+            }
+        } else if ((102.5f+(12*99.615384f) < a && a < 102.5f+(13*99.615384f)) && (290.83333333f < b && b < 512.16666666666666f)) {
+            black->setPosition(750.f, 500.f);
+            player_score = player_score + 1;
+            if(player_score == max_score){
+                window->close();
+            }
+        }
     }
+
 }
 
 void Game::updateAllCollisions(){
@@ -185,6 +211,9 @@ void Game::updateDirectionLine()
 
 void Game::render(){
     window->clear(sf::Color(75, 103, 163));
+    window->draw(LeftGoal);
+    window->draw(RightGoal);
+
     board->render(window);
     window->draw(*black);
 

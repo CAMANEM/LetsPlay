@@ -15,7 +15,7 @@ void BPGame_Window::Run(sf::RenderWindow *_window) {
 
 
     sf::Event event;
-    Game game = Game(17,0);
+    Game game = Game(17,2);
 
 
     while (!back_button && _window->isOpen()) {
@@ -24,12 +24,6 @@ void BPGame_Window::Run(sf::RenderWindow *_window) {
         game.render();
 
         while (_window->pollEvent(event)) {
-
-
-
-
-
-
 
             switch (event.type) {
 
@@ -42,7 +36,6 @@ void BPGame_Window::Run(sf::RenderWindow *_window) {
                     }
             }
 
-            //aqui iria el codigo que genera el juego
         }
         _window->clear();
         _window->display();
