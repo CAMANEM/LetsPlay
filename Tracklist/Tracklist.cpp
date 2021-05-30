@@ -47,3 +47,10 @@ void Tracklist::show() {
         std::cout << std::endl;
     }
 }
+
+void Tracklist::reset() {
+    counter = 0;
+    head = nullptr;
+    tail = nullptr;
+    temporal = nullptr;
+}

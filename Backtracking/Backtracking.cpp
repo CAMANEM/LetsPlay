@@ -12,10 +12,11 @@ Backtracking::Backtracking() {
 
 bool Backtracking::Path(int matrix[9][13], int i, int j) {
 
+
     if (matrix[i+1][j] == 4 || matrix[i-1][j] == 4 || matrix[i][j+1] == 4 || matrix[i][j-1] == 4 ){
         std::cout << "FOUND" << std::endl;
-        path.show();
         founded = true;
+        path.show();
 
     }
     else{
@@ -24,9 +25,6 @@ bool Backtracking::Path(int matrix[9][13], int i, int j) {
                 matrix[i][j] = 1;
             }
             counter++;
-//            std::cout << i;
-//            std::cout << "-";
-//            std::cout << j<<std::endl;
 
             // Top edge
             if (i == 0 ){
@@ -296,4 +294,43 @@ bool Backtracking::Path(int matrix[9][13], int i, int j) {
 
     }
 
+}
+
+void Backtracking::reset() {
+
+    track.reset();
+    path.reset();
+
+    bool copy_visited[9][13] = {{true, true, true, true, true, true, true, true, true, true, true, true, true},
+                                 {true, true, true, true, true, true, true, true, true, true, true, true, true},
+                                 {true, true, true, true, true, true, true, true, true, true, true, true, true},
+                                 {true, true, true, true, true, true, true, true, true, true, true, true, true},
+                                 {true, true, true, true, true, true, true, true, true, true, true, true, true},
+                                 {true, true, true, true, true, true, true, true, true, true, true, true, true},
+                                 {true, true, true, true, true, true, true, true, true, true, true, true, true},
+                                 {true, true, true, true, true, true, true, true, true, true, true, true, true},
+                                 {true, true, true, true, true, true, true, true, true, true, true, true, true}};
+
+    memcpy(visited, copy_visited, sizeof(int)*9*13);
+    counter = 0;
+
+}
+
+void Backtracking::resetFlag() {
+    founded = false;
+
+}
+
+void Backtracking::setObstacles(std::vector<int> x, std::vector<int> y) {
+    int countAux = 0;
+    while (countAux<=13){
+        matrix[x[countAux]][y[countAux]] = 1;
+        countAux++;
+    }
+}
+
+void Backtracking::road(int i, int j) {
+    int matrixAux[9][13];
+    memcpy(matrixAux, matrix, sizeof(int)*9*13);
+    Path(matrixAux, i, j);
 }

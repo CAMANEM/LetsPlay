@@ -7,6 +7,7 @@
 
 
 #include <iostream>
+#include <vector>
 #include "../Tracklist/Tracklist.h"
 #include "../Pathlist/Pathlist.h"
 
@@ -15,6 +16,10 @@ public:
 
 
     bool Path(int matrix[9][13], int i, int j);
+    void reset();
+    void resetFlag();
+    void setObstacles(std::vector<int> x, std::vector<int> y);
+    void road(int i, int j);
     Backtracking();
 
 private:
@@ -29,6 +34,19 @@ private:
                           {true, true, true, true, true, true, true, true, true, true, true, true, true}};
     int counter = 0;
     bool founded = false;
+
+
+    int matrix[9][13] = {
+            {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0},
+            {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0},
+            {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0},
+            {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,4},
+            {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,4},
+            {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,4},
+            {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0},
+            {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0},
+            {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0}
+    };
 
 };
 

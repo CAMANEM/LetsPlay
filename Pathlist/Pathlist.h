@@ -15,13 +15,15 @@ public:
     void insert(int x, int y);
     void remove();
     void show();
+    void reset();
     Pathlist();
 
 private:
+
+    int counter = 0;
     Pathnode* head = nullptr;
     Pathnode* tail = nullptr;
     Pathnode* temporal = nullptr;
-    int counter = 0;
 
 };
 

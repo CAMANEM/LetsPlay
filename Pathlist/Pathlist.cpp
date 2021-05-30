@@ -47,3 +47,11 @@ void Pathlist::show() {
         std::cout << temporal->getY() << std::endl;
     }
 }
+
+void Pathlist::reset() {
+    counter = 0;
+    head = nullptr;
+    tail = nullptr;
+    temporal = nullptr;
+
+}

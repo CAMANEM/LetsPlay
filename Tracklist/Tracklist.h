@@ -14,6 +14,7 @@ public:
     void insert(int matrix[9][13]);
     void remove();
     void show();
+    void reset();
     Tracknode* tail = nullptr;
     Tracklist();
 
