@@ -33,13 +33,16 @@ void Chromosome::setFitness(const int* _puzzle_size, const int* _total_bits, con
 
         // Si el cromosoma repite genes o un gen es invalido.
         if (std::find(used_genes.begin(), used_genes.end(), cell) != used_genes.end() ||  *_puzzle_size-1 < cell){
-            std::cout << "Error" << std::endl;
-            no_errors = false;
-            fitness = -1;
+            if (*_puzzle_size-1 < cell){fitness = -1; std::cout << "Error: invalid gen" << std::endl;}
+            else{no_errors = false;
+                fitness = 0;
+                std::cout << "Error: repited gen" << std::endl;}
+
+
         }
         else if (cell == correct_gen){
             if (streak){
-                fitness += 2;
+                fitness++;
             }
             else {
                 fitness++;
@@ -54,6 +57,28 @@ void Chromosome::setFitness(const int* _puzzle_size, const int* _total_bits, con
 }
 
 
+std::vector<int> Chromosome::getPuzzle(const int* _puzzle_size, const int* _total_bits, const int* _bits_per_gene) {
+
+    int bit_position = *_total_bits - 1;
+    std::vector<int> puzzleOrder(*_puzzle_size);
+    int cell;
+
+    for (int i = 0; i < *_puzzle_size; i++) {
+
+        std::bitset<32> reading(0);
+
+        for (int j = *_bits_per_gene - 1; 0 <= j; j--) {
+
+            reading.set(j, getGenes()[bit_position]);
+            bit_position--;
+
+        }
+        cell = (int) (reading.to_ulong());
+        puzzleOrder.at(i) = cell;
+
+    }
+    return puzzleOrder;
+}
 // Está tirando muchos errores
 int Chromosome::getCrossoverPoint(Chromosome *father, const int* _puzzle_size, const int *_total_bits, const int *_bits_per_gene) {
 
@@ -83,6 +108,12 @@ int Chromosome::getCrossoverPoint(Chromosome *father, const int* _puzzle_size, c
 
 Chromosome::Chromosome(Chromosome *father, Chromosome *mother, const int *_puzzle_size, const int *_total_bits,
                        const int *_bits_per_gene, bool firstChild) {
+
+    if (!firstChild){
+        Chromosome* inverter = father;
+        father = mother;
+        mother = inverter;
+    }
 
     genes.resize(*_total_bits);
     int crossover_point = getCrossoverPoint(father, _puzzle_size, _total_bits, _bits_per_gene);

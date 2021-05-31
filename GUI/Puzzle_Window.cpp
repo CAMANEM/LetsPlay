@@ -57,6 +57,14 @@ void Puzzle_Window::Run(sf::RenderWindow *_window) {
                     else if (sf::Mouse::isButtonPressed(sf::Mouse::Right) && game_started && !fragmentedImage){
                         fragmentImage(std::stoi((std::string) number.getString()));
                         fragmentedImage = true;
+                        geneticPuzzle = new GeneticPuzzle(puzzle_pieces.size());
+                        geneticPuzzle->firstGeneration(200);
+                        prueba = true;
+                        pieces_order = geneticPuzzle->showPopulation();
+
+                    }
+                    else if (sf::Mouse::isButtonPressed(sf::Mouse::Right) && prueba){
+                        nextEvol = true;
                     }
 
             }
@@ -75,9 +83,32 @@ void Puzzle_Window::Run(sf::RenderWindow *_window) {
                 _window->draw(sprite);
             }
             else if (fragmentedImage){
-            for (int i = 0; i < puzzle_pieces.size(); ++i) {
-                _window->draw(puzzle_pieces.at(i));
-            }
+                int limit = pieces_order.size();
+
+                if (nextEvol){
+                    geneticPuzzle->newGeneration();
+                    pieces_order = geneticPuzzle->showPopulation();
+                    std::cout << "positions: " << pieces_positions.size() << std::endl;
+                    std::cout << "pieces: " << puzzle_pieces.size() << std::endl;
+                    std::cout << "pieces order: " << pieces_order.size() << std::endl;
+                    for (int i = 0; i < limit; i++) {
+                        puzzle_pieces.at(i).setPosition(pieces_positions.at(pieces_order.at(i)));
+                        _window->draw(puzzle_pieces.at(i));
+                    }
+                    if (geneticPuzzle->finished()){nextEvol = false;}
+//                    nextEvol = false;
+                }
+                else{
+                    for (int i = 0; i < limit; i++) {
+                        puzzle_pieces.at(i).setPosition(pieces_positions.at(pieces_order.at(i)));
+                        _window->draw(puzzle_pieces.at(i));
+                    }
+                }
+
+
+//                for (int i = 0; i < puzzle_pieces.size(); ++i) {
+//                _window->draw(puzzle_pieces.at(i));
+//            }
             }
         }
         _window->display();

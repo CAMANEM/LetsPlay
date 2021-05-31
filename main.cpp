@@ -4,8 +4,8 @@
 #include <bits/stdc++.h>
 int main() {
 
-//    Main_Window* mainWindow = new Main_Window();
-//    mainWindow->Run();
+    Main_Window* mainWindow = new Main_Window();
+    mainWindow->Run();
 
 //    GeneticPuzzle* geneticPuzzle = new GeneticPuzzle(5);
 //    std::bitset<32> bitsets(0);
@@ -14,10 +14,21 @@ int main() {
 //        std::cout << bitsets;
 //    }
 
-    GeneticPuzzle* geneticPuzzle = new GeneticPuzzle(9);
-    geneticPuzzle->firstGeneration(4);
-    geneticPuzzle->newGeneration();
-    geneticPuzzle->showPopulation();
+//    GeneticPuzzle* geneticPuzzle = new GeneticPuzzle(7);
+//    geneticPuzzle->firstGeneration(15);
+//
+//    geneticPuzzle->showPopulation();
+//    for (int i = 0; i < 60; i++) {
+//        geneticPuzzle->newGeneration();
+//        std::vector<int> a = geneticPuzzle->showPopulation();
+//        for(std::vector<int>::iterator it = a.begin(); it != a.end(); it++) {
+//            std::cout << *it;
+//        }
+//        std::cout << "-------" << std::endl;
+//        unsigned int microseconds;
+//        microseconds = 1000000;
+//        usleep(microseconds);
+//    }
     return 0;
 }
 

@@ -68,6 +68,8 @@ public:
      */
     const boost::dynamic_bitset<> &getGenes() const;
 
+    std::vector<int> getPuzzle(const int* _puzzle_size, const int* _total_bits, const int* _bits_per_gene);
+
 };
 
 
