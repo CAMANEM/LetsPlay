@@ -12,7 +12,6 @@ Backtracking::Backtracking() {
 
 bool Backtracking::Path(int matrix[9][13], int i, int j) {
 
-
     if (matrix[i+1][j] == 4 || matrix[i-1][j] == 4 || matrix[i][j+1] == 4 || matrix[i][j-1] == 4 ){
         std::cout << "FOUND" << std::endl;
         founded = true;
@@ -297,10 +296,8 @@ bool Backtracking::Path(int matrix[9][13], int i, int j) {
 }
 
 void Backtracking::reset() {
-
     track.reset();
     path.reset();
-
     bool copy_visited[9][13] = {{true, true, true, true, true, true, true, true, true, true, true, true, true},
                                  {true, true, true, true, true, true, true, true, true, true, true, true, true},
                                  {true, true, true, true, true, true, true, true, true, true, true, true, true},
@@ -318,7 +315,6 @@ void Backtracking::reset() {
 
 void Backtracking::resetFlag() {
     founded = false;
-
 }
 
 void Backtracking::setObstacles(std::vector<int> x, std::vector<int> y) {
@@ -330,6 +326,8 @@ void Backtracking::setObstacles(std::vector<int> x, std::vector<int> y) {
 }
 
 void Backtracking::road(int i, int j) {
+    resetFlag();
+    reset();
     int matrixAux[9][13];
     memcpy(matrixAux, matrix, sizeof(int)*9*13);
     Path(matrixAux, i, j);

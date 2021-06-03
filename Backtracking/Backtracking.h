@@ -14,15 +14,33 @@
 class Backtracking {
 public:
 
-
-    bool Path(int matrix[9][13], int i, int j);
+    /**
+     * @brief resets the parallel linked lists an the visited matrix
+     */
     void reset();
-    void resetFlag();
+
+    /**
+     * @brief sets the obstacles in to the matrix
+     * @param x vector with the x axy values of the obstacles positions
+     * @param y vector with the y axy values of the obstacles positions
+     */
     void setObstacles(std::vector<int> x, std::vector<int> y);
+
+    /**
+     * @brief gives the path fro an specific position
+     * @param i row where the analysis is going to start
+     * @param j column where the analysis is going to start
+     */
     void road(int i, int j);
+
+    /**
+     * @brief Constructor
+     */
     Backtracking();
 
 private:
+    bool Path(int matrix[9][13], int i, int j);
+    void resetFlag();
     bool visited[9][13]= {{true, true, true, true, true, true, true, true, true, true, true, true, true},
                           {true, true, true, true, true, true, true, true, true, true, true, true, true},
                           {true, true, true, true, true, true, true, true, true, true, true, true, true},
@@ -34,7 +52,6 @@ private:
                           {true, true, true, true, true, true, true, true, true, true, true, true, true}};
     int counter = 0;
     bool founded = false;
-
 
     int matrix[9][13] = {
             {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0},

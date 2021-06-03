@@ -23,6 +23,4 @@ Tracknode *Tracknode::getNext() {
 
 void Tracknode::setMatrix(int _matrix[9][13]) {
     memcpy(matrix, _matrix, sizeof(int)*9*13);
-
-
 }

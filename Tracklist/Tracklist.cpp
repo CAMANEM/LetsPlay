@@ -22,11 +22,9 @@ void Tracklist::insert(int matrix[9][13]) {
         tail = temporal;
         counter++;
     }
-
 }
 
 void Tracklist::remove() {
-
     temporal = head;
     Tracknode *prev;
     while (temporal->getNext() != nullptr){
@@ -37,8 +35,8 @@ void Tracklist::remove() {
     tail = prev;
     counter--;
     delete temporal;
-
 }
+
 void Tracklist::show() {
     for(int i = 0; i<9; i++){
         for (int j = 0; j < 13; ++j) {

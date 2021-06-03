@@ -22,11 +22,9 @@ void Pathlist::insert(int x, int y) {
         tail = temporal;
         counter++;
     }
-
 }
 
 void Pathlist::remove() {
-
     temporal = head;
     Pathnode *prev;
     while (temporal->getNext() != nullptr){
@@ -37,7 +35,6 @@ void Pathlist::remove() {
     tail = prev;
     counter--;
     delete temporal;
-
 }
 
 void Pathlist::show() {
@@ -53,5 +50,4 @@ void Pathlist::reset() {
     head = nullptr;
     tail = nullptr;
     temporal = nullptr;
-
 }
