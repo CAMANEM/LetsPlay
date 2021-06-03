@@ -20,7 +20,6 @@ void XML::Construction(std::string name) {
     doc.Parse(xml);
     doc.SaveFile(("../XML Files/"+name+".xml").c_str());
 
-
 }
 
 void XML::Modification(std::string name, std::string element, std::string info) {
@@ -28,7 +27,6 @@ void XML::Modification(std::string name, std::string element, std::string info) 
     change = doc.FirstChildElement("ROOT")->FirstChildElement(element.c_str());
     change->SetText(info.c_str());
     doc.SaveFile(("../XML Files/"+name+".xml").c_str());
-
 
 }
 
