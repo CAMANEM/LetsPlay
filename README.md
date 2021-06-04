@@ -7,15 +7,20 @@ Requisites:
 * C++ (at least C++ 17)
 * SpdLog
 * SFML
+* Boost
 
-SpdLog installation on linux:
+SpdLog installation on Linux:
 
     sudo apt update
     sudo apt install libspdlog-dev
 
-SFML installation on linux:
+SFML installation on Linux:
 
     sudo apt-get install libsfml-dev
+
+Boost installation on Linux:
+
+    sudo apt-get install libboost-all-dev
 
 If using CLion, add to the CmakeLists.txt:
 
