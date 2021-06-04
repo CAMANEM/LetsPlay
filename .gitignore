@@ -30,7 +30,7 @@
 *.exe
 *.out
 *.app
-
+*.xml
 
 /CMakeLists.txt
 # Created by https://www.toptal.com/developers/gitignore/api/cmake,c++,clion,jetbrains
@@ -197,5 +197,3 @@ CMakeUserPresets.json
 ### CMake Patch ###
 # External projects
 *-prefix/
-
-XML Files/.

@@ -18,18 +18,18 @@ void XML::Construction(std::string name) {
 
     static const char* xml = hp.c_str();
     doc.Parse(xml);
-    doc.SaveFile(("../XML Files/"+name+".xml").c_str());
+    doc.SaveFile(("../XMLFiles/"+name+".xml").c_str());
 
 }
 
 void XML::Modification(std::string name, std::string element, std::string info) {
-    doc.LoadFile(("../XML Files/"+name+".xml").c_str());
+    doc.LoadFile(("../XMLFiles/"+name+".xml").c_str());
     change = doc.FirstChildElement("ROOT")->FirstChildElement(element.c_str());
     change->SetText(info.c_str());
-    doc.SaveFile(("../XML Files/"+name+".xml").c_str());
+    doc.SaveFile(("../XMLFiles/"+name+".xml").c_str());
 
 }
 
 void XML::Elimination(std::string name) {
-    remove(("../XML Files/"+name+".xml").c_str());
+    remove(("../XMLFiles/"+name+".xml").c_str());
 }
