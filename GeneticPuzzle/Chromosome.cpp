@@ -34,7 +34,7 @@ void Chromosome::setFitness(const int* _puzzle_size, const int* _total_bits, con
         // Si el cromosoma repite genes o un gen es invalido.
         if (std::find(used_genes.begin(), used_genes.end(), cell) != used_genes.end() ||  *_puzzle_size-1 < cell){
             if (*_puzzle_size-1 < cell){fitness = -1; std::cout << "Error: invalid gen" << std::endl;}
-            else{no_errors = false;
+            else{//no_errors = false;
                 fitness = 0;
                 std::cout << "Error: repited gen" << std::endl;}
 
@@ -79,7 +79,7 @@ std::vector<int> Chromosome::getPuzzle(const int* _puzzle_size, const int* _tota
     }
     return puzzleOrder;
 }
-// Está tirando muchos errores
+// Estába tirando muchos errores
 int Chromosome::getCrossoverPoint(Chromosome *father, const int* _puzzle_size, const int *_total_bits, const int *_bits_per_gene) {
 
     int correct_gen = 0;
@@ -126,6 +126,13 @@ Chromosome::Chromosome(Chromosome *father, Chromosome *mother, const int *_puzzl
 
         genes.set(i, mother_genes[i]);
     }
+
+    // muta con una posibilidad de 1/51
+//    if (rand() % 50 == 1){
+//        std::cout << "Mutación" << std::endl;
+//        mutate(_puzzle_size, _total_bits, _bits_per_gene);
+//    }
+
     setFitness(_puzzle_size, _total_bits, _bits_per_gene);
 }
 
@@ -164,6 +171,67 @@ int Chromosome::randInt(std::vector<int>* _values) {
 
 const boost::dynamic_bitset<> &Chromosome::getGenes() const {
     return genes;
+}
+
+// Error grave no controlado
+void Chromosome::mutate(const int *_puzzle_size, const int *_total_bits, const int *_bits_per_gene) {
+
+    int correct_gen = 0;
+    int bit_position = *_total_bits-1;
+    int cell;
+    int cell2;
+
+    std::cout << "genes 1 " << genes << std::endl;
+
+    for (int i = 0; i < *_puzzle_size; i++) {
+
+        std::bitset<32> reading(0);
+
+        for (int j = *_bits_per_gene-1; 0 <= j; j--) {
+
+            reading.set(j, genes[bit_position]);
+            bit_position--;
+
+        }
+        cell = (int)(reading.to_ulong());
+
+        if (cell != correct_gen){
+
+            break;
+        }
+        correct_gen++;
+    }
+
+    std::bitset<32> reading2(0);
+    for (int j = *_bits_per_gene-1; 0 <= j; j--) {
+        reading2.set(j, genes[bit_position]);
+        bit_position--;
+    }
+    cell2 = (int)(reading2.to_ulong());
+    bit_position = bit_position + *_bits_per_gene*2;
+
+
+    // a invertir valores we
+    std::bitset<32> gen2(cell2);
+    std::bitset<32> gen1(cell);
+    for (int i = *_bits_per_gene-1; 0 <= i; i--) {
+        genes.set(bit_position, gen2[i]);
+        bit_position--;
+    }
+    for (int i = *_bits_per_gene-1; 0 <= i; i--) {
+        genes.set(bit_position, gen1[i]);
+        bit_position--;
+    }
+    std::cout << "genes 2 " << genes << std::endl;
+//    if (genes[bit_position] == true){
+//        std::cout << "ah" << std::endl;
+//        genes[bit_position] = ~genes[bit_position];
+//    }
+//    else{
+//        std::cout << "ah2" << std::endl;
+//        genes[bit_position] = ~genes[bit_position];
+//    }
+    //return bit_position;
 }
 
 

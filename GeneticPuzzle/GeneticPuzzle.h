@@ -33,6 +33,8 @@ private:
      */
     int partition(int left, int right);
 
+    void doomsday();
+
 public:
     GeneticPuzzle(int _puzzle_size);
 

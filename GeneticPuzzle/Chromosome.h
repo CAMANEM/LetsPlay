@@ -42,6 +42,8 @@ private:
      */
     int getCrossoverPoint(Chromosome *father, const int* _puzzle_size, const int *_total_bits, const int *_bits_per_gene);
 
+    void mutate( const int* _puzzle_size, const int *_total_bits, const int *_bits_per_gene);
+
 public:
 
     /**

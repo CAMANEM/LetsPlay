@@ -117,6 +117,21 @@ void GeneticPuzzle::newGeneration() {
         population.pop_back();
     }
     n_generation++;
+
+    if (population.at(0)->getFitness() == 0 || 400 < n_generation){
+        doomsday();
+        firstGeneration(200);
+    }
+}
+
+void GeneticPuzzle::doomsday() {
+    int index = population.size()-1;
+    while (!population.empty()){
+        free(population.at(index));
+        population.pop_back();
+        index--;
+    }
+    std::cout << "new Age" << std::endl;
 }
 
 void GeneticPuzzle::sortPopulation(int left, int right) {
