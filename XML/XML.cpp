@@ -8,17 +8,20 @@ XML::XML() {
 
 }
 
-void XML::Construction(std::string name) {
+void XML::Construction(std::vector<int> name) {
 
-    std::string hp =
+    std::string file =
             "<?xml version=\"1.0\"?>"
-            "<ROOT> "
-            "<NAME>" + name+"</NAME>"
-            "</ROOT>";
 
-    static const char* xml = hp.c_str();
+            "<ROOT> "
+            "<POPULATION>" + (std::string(name.begin(), name.end()))+"</POPULATION>"
+             "</ROOT>";
+
+
+    static const char* xml = file.c_str();
     doc.Parse(xml);
-    doc.SaveFile(("../XMLFiles/"+name+".xml").c_str());
+    doc.SaveFile(("../XMLFiles/"+ std::to_string(counter)+ ".xml").c_str());
+    counter++;
 
 }
 

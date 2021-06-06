@@ -9,6 +9,7 @@
 #include <iostream>
 #include <string>
 #include <stdio.h>
+#include <vector>
 
 using namespace tinyxml2;
 
@@ -20,7 +21,7 @@ public:
      * @brief Creates and saves the basic structure of an XML file
      * @param name of the file that is going to be saved
      */
-    void Construction(std::string name);
+    void Construction(std::vector<int> name);
 
     /**
      * @brief modifies an specific element of an XML file
@@ -45,6 +46,7 @@ public:
 private:
     XMLDocument doc;
     XMLElement* change;
+    int counter = 0;
 };
 
 
