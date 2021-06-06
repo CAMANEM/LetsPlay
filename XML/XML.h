@@ -37,6 +37,14 @@ public:
      */
     void Elimination(std::string name);
 
+
+    /**
+     * @brief returns the vector inside the the XML file
+     * @param file name
+     * @return vector inside the file
+     */
+    std::vector<int> Population(int file);
+
     /**
      * @brief Constructor
      */

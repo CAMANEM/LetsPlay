@@ -23,6 +23,7 @@ int main() {
 
     XML hp = XML();
     hp.Construction({1,2,3,4,5,6});
+    hp.Population();
 //    hp.Modification("Fernando", "NAME", "PABLO");
 //    hp.Elimination("Fernando");
     return 0;

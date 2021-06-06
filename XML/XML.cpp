@@ -12,7 +12,6 @@ void XML::Construction(std::vector<int> name) {
 
     std::string file =
             "<?xml version=\"1.0\"?>"
-
             "<ROOT> "
             "<POPULATION>" + (std::string(name.begin(), name.end()))+"</POPULATION>"
              "</ROOT>";
@@ -35,4 +34,13 @@ void XML::Modification(std::string name, std::string element, std::string info) 
 
 void XML::Elimination(std::string name) {
     remove(("../XMLFiles/"+name+".xml").c_str());
+}
+
+std::vector<int> XML::Population(int file) {
+    doc.LoadFile(("../XMLFiles/"+std::to_string(file)+".xml").c_str());
+    change = doc.FirstChildElement("ROOT")->FirstChildElement("POPULATION");
+    std::string aux = change->GetText();
+    std::vector<int> vector_aux(aux.begin(), aux.end());
+
+    return vector_aux;
 }
