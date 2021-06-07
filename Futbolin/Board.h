@@ -18,6 +18,7 @@
 #include <vector>
 
 #include "Line.h"
+#include "Squares.h"
 
 class Board
 {
@@ -38,10 +39,17 @@ private:
     std::vector <Line> lines;
     std::vector <int> xPos;
     std::vector <int> yPos;
+    Squares *Grid = nullptr;
+
+    Squares *start = nullptr;
+    Squares *end = nullptr;
+
+    void A_Star();
     void initBorderLines();
     void initSquaresR(int squares);
     void initSquaresM();
     void initSquaresL(int squares);
+    void initGrid();
 };
 
 #endif //LETSPLAY_BOARD_H

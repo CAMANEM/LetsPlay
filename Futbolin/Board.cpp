@@ -5,6 +5,11 @@
 #include "Board.h"
 #include <cstdlib>
 #include <ctime>
+#include "Squares.h"
+#include "limits"
+#include <cmath>
+#include <math.h>
+#include <list>
 
 Board::Board(int squares){
     initBorderLines();
@@ -17,6 +22,7 @@ Board::Board(int squares){
         initSquaresM();
         initSquaresR(squares/2);
     }
+    initGrid();
 }
 
 Board::~Board(){
@@ -119,6 +125,41 @@ void Board::initSquaresM(){
     lines.push_back(lineLeft);
 }
 
+void Board::initGrid() {
+    Grid = new Squares[13*9];
+
+    for (int x = 0; x < 13; x++){
+        for (int y = 0; y < 9; y++){
+            Grid[y * 13 + x].x = x; // ...because we give each node its own coordinates
+            Grid[y * 13 + x].y = y;
+            Grid[y * 13 + x].isObstacle = false;
+            Grid[y * 13 + x].Previous = nullptr;
+            Grid[y * 13 + x].beenVisited = false;
+
+            if (y > 0) {
+                Grid[y * 13 + x].Neighbours.push_back(&Grid[(y - 1) * 13 + (x + 0)]);
+            }
+            if (y < 9 - 1) {
+                Grid[y * 13 + x].Neighbours.push_back(&Grid[(y + 1) * 13 + (x + 0)]);
+            }
+            if (x > 0) {
+                Grid[y * 13 + x].Neighbours.push_back(&Grid[(y + 0) * 13 + (x - 1)]);
+            }
+            if (x < 13 - 1) {
+                Grid[y * 13 + x].Neighbours.push_back(&Grid[(y + 0) * 13 + (x + 1)]);
+            }
+        }
+    }
+
+    start = &Grid[4 * 13 + 6];
+    end = &Grid[4 * 13 + 0];
+
+
+    for (int i = 0; i < xPos.size(); i++){
+        Grid[yPos[i] * 13 + xPos[i]].isObstacle = true;
+    }
+}
+
 
 std::vector<Line> Board::getBorderLines(){
     return lines;
@@ -138,9 +179,95 @@ void Board::update(){
 
 }
 
+void Board::A_Star() {
+    for (int x = 0; x < 13; x++){
+        for (int y = 0; y < 9; y++){
+            Grid[y*13 + x].beenVisited = false;
+            Grid[y*13 + x].Goal = std::numeric_limits<int>::max();
+            Grid[y*13 + x].LocalGoal = std::numeric_limits<int>::max();
+            Grid[y*13 + x].Previous = nullptr;	// No parents
+        }
+    }
+
+    auto distance = [](Squares* a, Squares* b) // For convenience
+    {
+        return sqrt((a->x - b->x)*(a->x - b->x) + (a->y - b->y)*(a->y - b->y));
+    };
+
+    auto heuristic = [distance](Squares* a, Squares* b) // So we can experiment with heuristic
+    {
+        return distance(a, b);
+    };
+
+    Squares *nodeCurrent = start;
+    start->LocalGoal = 0.0f;
+    start->Goal = heuristic(start, end);
+
+    std::list<Squares*> listNotTestedNodes;
+    listNotTestedNodes.push_back(start);
+
+    while(!listNotTestedNodes.empty()){
+        listNotTestedNodes.sort([](const Squares* lhs, const Squares* rhs){ return lhs->Goal < rhs->Goal; } );
+        while(!listNotTestedNodes.empty() && listNotTestedNodes.front()->beenVisited){
+            listNotTestedNodes.pop_front();
+        } if (listNotTestedNodes.empty()) {
+            break;
+        }
+
+        nodeCurrent = listNotTestedNodes.front();
+        nodeCurrent->beenVisited = true;
+
+        for (auto nodeNeighbour : nodeCurrent->Neighbours){
+            if (!nodeNeighbour->beenVisited && nodeNeighbour->isObstacle == 0) {
+                listNotTestedNodes.push_back(nodeNeighbour);
+            }
+
+            float fPossiblyLowerGoal = nodeCurrent->LocalGoal + distance(nodeCurrent, nodeNeighbour);
+
+            if (fPossiblyLowerGoal < nodeNeighbour->LocalGoal){
+                nodeNeighbour->Previous = nodeCurrent;
+                nodeNeighbour->LocalGoal = fPossiblyLowerGoal;
+
+                nodeNeighbour->Goal = nodeNeighbour->LocalGoal + heuristic(nodeNeighbour, end);
+            }
+        }
+    }
+}
+
 void Board::render(sf::RenderTarget* target){
     //target->draw(sprite);
+    A_Star();
+//    for (int x = 0; x < 13; x++){
+//        for (int y = 0; y < 9; y++){
+//            sf::RectangleShape square(sf::Vector2f(59.615384f,38.7777777f));
+//            square.setPosition(125.5f +  (x * 50) + (x * 49.5f), 86.94f +  (y * 50) + (y * 23.44f));
+//
+//
+//            if (&Grid[y * 13 + x] == start){
+//                square.setFillColor(sf::Color(0, 220, 0));
+//            } else if (&Grid[y * 13 + x] == end){
+//                square.setFillColor(sf::Color(0, 0, 0));
+//            }else if (!Grid[y * 13 + x].isObstacle){
+//                square.setFillColor(sf::Color(254, 154, 39));
+//            }else {
+//                square.setFillColor(sf::Color(232, 220, 0));
+//            }
+//
+//
+//            target->draw(square);
+//        }
+//    }
 
+    Squares *temp = end;
+    while (temp->Previous != nullptr){
+        sf::Vertex line[] = {
+                sf::Vertex(sf::Vector2f(temp->x*99.615384f + 73.7777777f/2 + 116.5f, temp->y*73.7777777f + 99.615384f/2 + 55.5f)),
+                sf::Vertex(sf::Vector2f(temp->Previous->x*99.615384f + 73.7777777f/2 + 116.5f, temp->Previous->y*73.7777777f + 99.615384f/2 + 55.5f))
+        };
+        target->draw(line, 2, sf::Lines);
+
+        temp = temp->Previous;
+    }
     for (auto i : lines)
     {
         target->draw(i);

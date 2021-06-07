@@ -211,15 +211,19 @@ void Game::updateDirectionLine()
 
 void Game::render(){
     window->clear(sf::Color(75, 103, 163));
+
     window->draw(LeftGoal);
     window->draw(RightGoal);
-
     board->render(window);
+
     window->draw(*black);
 
     if (dragged)
     {
         window->draw(*direction);
     }
+
+
+
     window->display();
 }
