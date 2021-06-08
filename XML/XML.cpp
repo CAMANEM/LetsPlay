@@ -8,14 +8,13 @@ XML::XML() {
 
 }
 
-void XML::Construction(std::vector<int> name) {
+void XML::Construction(std::string name) {
 
     std::string file =
             "<?xml version=\"1.0\"?>"
-            "<ROOT> "
-            "<POPULATION>" + (std::string(name.begin(), name.end()))+"</POPULATION>"
+            "<ROOT>"
+            "<POPULATION>" + name +"</POPULATION>"
              "</ROOT>";
-
 
     static const char* xml = file.c_str();
     doc.Parse(xml);
@@ -41,6 +40,6 @@ std::vector<int> XML::Population(int file) {
     change = doc.FirstChildElement("ROOT")->FirstChildElement("POPULATION");
     std::string aux = change->GetText();
     std::vector<int> vector_aux(aux.begin(), aux.end());
-
+    std::cout<< vector_aux[5];
     return vector_aux;
 }

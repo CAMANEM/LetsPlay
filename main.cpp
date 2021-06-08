@@ -2,6 +2,7 @@
 #include "GUI/Main_Window.h"
 #include "XML/XML.h"
 #include "XML/tinyxml2.h"
+#include <vector>
 
 
 #include <iostream>
@@ -21,10 +22,26 @@ int main() {
 //    Main_Window* mainWindow = new Main_Window();
 //    mainWindow->Run();
 
+
+std::string Trump = "{";
+std::vector<int> charly = {};
+
+
+
     XML hp = XML();
-    hp.Construction({1,2,3,4,5,6});
-    hp.Population();
-//    hp.Modification("Fernando", "NAME", "PABLO");
-//    hp.Elimination("Fernando");
+
+    for (int i = 0; i < 10; ++i) {
+        Trump += std::to_string(i);
+        Trump += ",";
+    }
+    Trump += std::to_string(11);
+
+    Trump += "}";
+
+
+    hp.Construction(Trump);
+    hp.Population(0);
+
+
     return 0;
 }
