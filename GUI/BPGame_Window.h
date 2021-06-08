@@ -6,12 +6,15 @@
 #define LETSPLAY_BPGAME_WINDOW_H
 
 #include <SFML/Graphics.hpp>
+#include "../Futbolin/Game.h"
 
 
 class BPGame_Window {
 
 private:
     bool play = false;
+    Game* game;
+
 
 public:
     BPGame_Window();

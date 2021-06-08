@@ -77,7 +77,7 @@ void BPGame_Window::Run(sf::RenderWindow *_window) {
     playbtn.setCharacterSize(80);
     playbtn.setPosition((1100-playbtn.getGlobalBounds().width)/2, 350.0f);
 
-    Game game = Game(17,2);
+
     while (!back_button && _window->isOpen()) {
 
 //        game.update();
@@ -108,6 +108,7 @@ void BPGame_Window::Run(sf::RenderWindow *_window) {
                             number2.setString(std::to_string(std::stoi((std::string) number2.getString())-1));
                         }
                         else if (playbtn.getGlobalBounds().contains(mouse)){
+                            game = new Game(std::stoi((std::string) number.getString()),std::stoi((std::string) number2.getString()));
                             play = true;
                         }
                     }
@@ -131,8 +132,8 @@ void BPGame_Window::Run(sf::RenderWindow *_window) {
             _window->draw(playbtn);
         }
         else if (play){
-            game.update();
-            game.render();
+            game->update();
+            game->render();
         }
 
         _window->display();
