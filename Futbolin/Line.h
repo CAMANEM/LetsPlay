@@ -21,19 +21,43 @@
 
 class Line : public sf::Drawable, sf::Transformable {
 public:
+    /*!
+     * @brief Constructor
+     */
     Line();
+
+    /*!
+     * @brief Contructor principal
+     * @param x1 Coordenada x1
+     * @param y1 Coordenada y1
+     * @param x2 Coordenada x2
+     * @param y2 Coordenada y2
+     * @param color Color de la linea
+     */
     Line(float x1, float y1, float x2, float y2, sf::Color color = sf::Color::White);
+
+    /*!
+     * @brief Destructor
+     */
     ~Line();
 
+    /*!
+     * @brief Getter para los puntos de una linea
+     * @return Vector que contiene las coordenadas de la linea
+     */
     sf::VertexArray getPoints();
 
-    void update();
-    void render(sf::RenderTarget& target);
 
 private:
     sf::VertexArray m_points;
     sf::Color m_color;
-    virtual void	draw(sf::RenderTarget& target, sf::RenderStates states) const;
+
+    /*!
+     * @brief Funcion que se encarga de dibujar en pantalla la linea
+     * @param target Ventana sobre la cual trabajar
+     * @param states
+     */
+    virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 };
 
 

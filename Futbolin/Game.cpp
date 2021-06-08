@@ -94,13 +94,13 @@ void Game::pollEvents() {
 }
 
 void Game::collisionCircleLine(Ball *circle, Line *line){
-    sf::Vector2f p = sf::Vector2f(circle->getPosition());	//center of circle
-    sf::Vector2f s = line->getPoints()[0].position;			//point at start of line
-    sf::Vector2f e = line->getPoints()[1].position;			//point at ent of line
+    sf::Vector2f p = sf::Vector2f(circle->getPosition());
+    sf::Vector2f s = line->getPoints()[0].position;
+    sf::Vector2f e = line->getPoints()[1].position;
     sf::Vector2f ps = p - s;
     sf::Vector2f se = e - s;
     float lengthLine = (e.x - s.x) * (e.x - s.x) + (e.y - s.y) * (e.y - s.y);
-    float t = ((ps.x * se.x) + (ps.y * se.y)) /	lengthLine; //point of normal on line
+    float t = ((ps.x * se.x) + (ps.y * se.y)) /	lengthLine;
     sf::Vector2f st;
     st.x = s.x + t*se.x;
     st.y = s.y + t*se.y;
@@ -130,49 +130,7 @@ void Game::collisionCircleLine(Ball *circle, Line *line){
     }
 }
 
-//void Game::collisionCircles(Ball* ball1, Ball* ball2){
-//    sf::Vector2f distance = ball1->getPosition() - ball2->getPosition();
-//    float distanceBetween = (sqrtf((distance.x*distance.x) + (distance.y*distance.y)));
-//    if (ball1 != ball2)
-//    {
-//        if (distanceBetween < (ball1->getRadius()+ball2->getRadius()))
-//        {
-//
-//            float overlap = (distanceBetween - ball1->getRadius() - ball2->getRadius()) / 2.f;
-//            float moveX = (overlap * (ball1->getPosition().x - ball2->getPosition().x) / distanceBetween);
-//            float moveY = (overlap * (ball1->getPosition().y - ball2->getPosition().y) / distanceBetween);
-//            ball1->setPosition(ball1->getPosition().x - moveX, ball1->getPosition().y - moveY);
-//            ball2->setPosition(ball2->getPosition().x +  moveX, ball2->getPosition().y + moveY);
-//
-//            sf::Vector2f normal;
-//            normal.x = distance.x / distanceBetween;
-//            normal.y = distance.y / distanceBetween;
-//
-//            sf::Vector2f tangential;
-//            tangential.x = -normal.y;
-//            tangential.y =  normal.x;
-//
-//            float dotProductTangential1 = ball1->getVelocity().x*tangential.x +
-//                                          ball1->getVelocity().y*tangential.y;
-//            float dotProductTangential2 = ball2->getVelocity().x*tangential.x +
-//                                          ball2->getVelocity().y*tangential.y;
-//
-//            float dotProductNormal1 = ball1->getVelocity().x*normal.x + ball1->getVelocity().y*normal.y;
-//            float dotProductNormal2 = ball2->getVelocity().x*normal.x + ball2->getVelocity().y*normal.y;
-//
-//            float m1 = (2.f*ball2->getMass()*dotProductNormal2 +
-//                        dotProductNormal1*(ball1->getMass() - ball2->getMass())) /
-//                       (ball1->getMass()+ball2->getMass());
-//            /*fixed high acceleration (m2 ~ ball1.mas - ball2.mas)*/
-//            float m2 = (2.f*ball1->getMass()*dotProductNormal1 +
-//                        dotProductNormal2*(ball2->getMass() - ball1->getMass())) /
-//                       (ball1->getMass()+ball2->getMass());
-//            ball1->setVelocity(dotProductTangential1*tangential + m1*normal);
-//            ball2->setVelocity(dotProductTangential2*tangential + m2*normal);
-//
-//        }
-//    }
-//}
+
 
 void Game::checkBallSquare(float x, float y) {
     int x_square = 0;

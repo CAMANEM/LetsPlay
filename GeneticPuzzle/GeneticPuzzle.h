@@ -5,7 +5,7 @@
 #ifndef LETSPLAY_GENETICPUZZLE_H
 #define LETSPLAY_GENETICPUZZLE_H
 
-#include <XML.h>
+#include <../XML/XML.h>
 #include "Chromosome.h"
 
 
