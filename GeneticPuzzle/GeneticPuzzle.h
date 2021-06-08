@@ -5,17 +5,20 @@
 #ifndef LETSPLAY_GENETICPUZZLE_H
 #define LETSPLAY_GENETICPUZZLE_H
 
+#include <XML.h>
 #include "Chromosome.h"
 
 
 class GeneticPuzzle {
 
 private:
-    int n_generation;
+    int n_generation = 0;
     std::vector<Chromosome*> population;
     int puzzle_size;
     int bits_per_gene;
-    int total_bits;
+    int total_bits; // bits per chromosome
+
+    XML* xml;
 
     /**
      * @brief Ordena el vector con la poplación de forma descendente mediante QuickSort
@@ -35,7 +38,9 @@ private:
 
     void doomsday();
 
+    std::vector<int> getPopulation();
 public:
+
     GeneticPuzzle(int _puzzle_size);
 
     void firstGeneration(int population_size);

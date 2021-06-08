@@ -61,6 +61,8 @@ void Puzzle_Window::Run(sf::RenderWindow *_window) {
                         geneticPuzzle->firstGeneration(200);
                         prueba = true;
                         pieces_order = geneticPuzzle->showPopulation();
+//                        XML* xml = new XML;
+//                        xml->Construction(pieces_order);
 
                     }
                     else if (sf::Mouse::isButtonPressed(sf::Mouse::Right) && prueba){

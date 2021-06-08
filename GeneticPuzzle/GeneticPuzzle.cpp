@@ -6,7 +6,6 @@
 #include <bits/stdc++.h>
 
 
-
 GeneticPuzzle::GeneticPuzzle(const int _puzzle_size) {
 
     GeneticPuzzle::puzzle_size = _puzzle_size;
@@ -16,6 +15,8 @@ GeneticPuzzle::GeneticPuzzle(const int _puzzle_size) {
     std::cout << "puzzle size: " << puzzle_size << std::endl;
     std::cout << "total bits: " << total_bits << std::endl;
     std::cout << "bits per gene: " << bits_per_gene << std::endl;
+
+    xml = new XML();
 }
 
 void GeneticPuzzle::firstGeneration(int population_size) {
@@ -27,8 +28,58 @@ void GeneticPuzzle::firstGeneration(int population_size) {
         population.push_back(chromosome);
     }
     std::cout << "tamaño poblacion: " << population.size() << std::endl;
-    n_generation = 0;
+//    n_generation = 0;
     sortPopulation( 0, population.size()-1);
+
+    // saves xml
+//    std::cout << "puta " << std::endl;
+//    std::vector<int> a;
+//    a = getPopulation();
+//    std::vector<int> jueputafiguerez;
+//    jueputafiguerez.push_back(1);
+//    jueputafiguerez.push_back(2);
+//    xml->Construction(jueputafiguerez);
+
+}
+
+std::vector<int> GeneticPuzzle::getPopulation() {
+
+
+//
+//    std::cout << "wtf" << std::endl;
+//    int saved_chromosomes = 0;
+//    int total_population = population.size();
+//
+//    std::vector<int> ipopulation;
+//
+//    int gen_index = total_bits - 1;
+//    int population_index = 0;
+//
+//    std::bitset<32> num_bits(0);
+//    int bitset_index = 31;
+//    ipopulation.push_back(bitset_index);
+//    while (population_index <  total_population || 10 < ipopulation.size()){
+//
+//        if (gen_index < 0){
+//            std::cout << "hola 1" << std::endl;
+//            population_index++;
+//            gen_index = total_bits-1;
+//        }
+//        else if (bitset_index < 0){
+//            std::cout << "hola 2" << std::endl;
+//            int num = (int)(num_bits.to_ulong());
+//            ipopulation.push_back(num);
+//            num_bits.reset();
+//            bitset_index = 31;
+//        }
+//        else{
+//            std::cout << "hola 3" << std::endl;
+//            num_bits.set(bitset_index, population.at(population_index)->getGenes()[gen_index]);
+//            gen_index--;
+//            bitset_index--;
+//        }
+//    }
+//    std::cout << "tamaño: " << ipopulation.size() << std::endl;
 }
 
 std::vector<int> GeneticPuzzle::showPopulation() {
@@ -119,8 +170,13 @@ void GeneticPuzzle::newGeneration() {
     n_generation++;
 
     if (population.at(0)->getFitness() == 0 || 400 < n_generation){
+        std::cout << "doomsday" << std::endl;
+        int population_size_ = population.size();
         doomsday();
-        firstGeneration(200);
+        firstGeneration(population_size_);
+    }
+    else{
+//        getPopulation();
     }
 }
 

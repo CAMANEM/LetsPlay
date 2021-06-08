@@ -34,9 +34,10 @@ void Chromosome::setFitness(const int* _puzzle_size, const int* _total_bits, con
         // Si el cromosoma repite genes o un gen es invalido.
         if (std::find(used_genes.begin(), used_genes.end(), cell) != used_genes.end() ||  *_puzzle_size-1 < cell){
             if (*_puzzle_size-1 < cell){fitness = -1; std::cout << "Error: invalid gen" << std::endl;}
-            else{//no_errors = false;
+            else{no_errors = false; // esta mica la tenia ccomentada por error
                 fitness = 0;
-                std::cout << "Error: repited gen" << std::endl;}
+//                std::cout << "Error: repited gen" << std::endl;
+            }
 
 
         }
