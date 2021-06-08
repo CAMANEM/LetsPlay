@@ -72,6 +72,8 @@ public:
 
     std::vector<int> getPuzzle(const int* _puzzle_size, const int* _total_bits, const int* _bits_per_gene);
 
+    std::string bits_to_string(const int* _total_bits);
+
 };
 
 

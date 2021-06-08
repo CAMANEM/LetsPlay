@@ -35,11 +35,8 @@ void XML::Elimination(std::string name) {
     remove(("../XMLFiles/"+name+".xml").c_str());
 }
 
-std::vector<int> XML::Population(int file) {
+std::string XML::Population(int file) {
     doc.LoadFile(("../XMLFiles/"+std::to_string(file)+".xml").c_str());
     change = doc.FirstChildElement("ROOT")->FirstChildElement("POPULATION");
-    std::string aux = change->GetText();
-    std::vector<int> vector_aux(aux.begin(), aux.end());
-    std::cout<< vector_aux[5];
-    return vector_aux;
+    return change->GetText();
 }

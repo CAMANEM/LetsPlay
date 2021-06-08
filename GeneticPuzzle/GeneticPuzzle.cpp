@@ -4,7 +4,7 @@
 
 #include "GeneticPuzzle.h"
 #include <bits/stdc++.h>
-
+#include <XML.h>
 
 
 GeneticPuzzle::GeneticPuzzle(const int _puzzle_size) {
@@ -29,6 +29,22 @@ void GeneticPuzzle::firstGeneration(int population_size) {
     std::cout << "tamaño poblacion: " << population.size() << std::endl;
     n_generation = 0;
     sortPopulation( 0, population.size()-1);
+
+    XML xml = XML();
+
+    std::string paXML;
+    std::vector<int> elVector = showPopulation();
+    for (int i = 0; i < elVector.size(); i++) {
+        paXML.append(std::to_string(elVector.at(i)));
+    }
+    xml.Construction(paXML);
+    std::cout << xml.Population(0) << std::endl;
+
+//    std::cout << xml.Population(1) << std::endl;
+
+    xml.Construction(population.at(0)->bits_to_string(&total_bits));
+
+
 }
 
 std::vector<int> GeneticPuzzle::showPopulation() {

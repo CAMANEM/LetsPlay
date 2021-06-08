@@ -19,28 +19,8 @@ int main() {
 
 
 
-//    Main_Window* mainWindow = new Main_Window();
-//    mainWindow->Run();
-
-
-std::string Trump = "{";
-std::vector<int> charly = {};
-
-
-
-    XML hp = XML();
-
-    for (int i = 0; i < 10; ++i) {
-        Trump += std::to_string(i);
-        Trump += ",";
-    }
-    Trump += std::to_string(11);
-
-    Trump += "}";
-
-
-    hp.Construction(Trump);
-    hp.Population(0);
+    Main_Window* mainWindow = new Main_Window();
+    mainWindow->Run();
 
 
     return 0;

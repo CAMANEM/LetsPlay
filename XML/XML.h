@@ -39,11 +39,11 @@ public:
 
 
     /**
-     * @brief returns the vector inside the the XML file
+     * @brief returns the string inside the the XML file
      * @param file name
      * @return vector inside the file
      */
-    std::vector<int> Population(int file);
+    std::string Population(int file);
 
     /**
      * @brief Constructor

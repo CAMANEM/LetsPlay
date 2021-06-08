@@ -56,6 +56,33 @@ void Chromosome::setFitness(const int* _puzzle_size, const int* _total_bits, con
     }
 }
 
+std::string Chromosome::bits_to_string(const int* _total_bits) {
+
+    std::cout << "total: " << *_total_bits << std::endl;
+    int bit_position = 0;
+    std::cout << "genes " << getGenes() << std::endl;
+    std::string theSTRING;
+    int cell;
+
+    while(bit_position < *_total_bits){
+
+        std::bitset<32> reading(0);
+        for (int i = 0; i < 32; i++) {
+            std::cout << "pos: " << bit_position << std::endl;
+            if(!(bit_position < *_total_bits)){
+                break;
+            }
+            reading.set(i, getGenes()[bit_position]);
+            bit_position++;
+        }
+        cell = ((int)(reading.to_ulong()));
+        theSTRING.append(std::to_string(cell));
+    }
+//    std::cout << "ulong" << genes.to_ulong() << std::endl;
+    std::cout << "string" << theSTRING << std::endl;
+    return theSTRING;
+}
+
 
 std::vector<int> Chromosome::getPuzzle(const int* _puzzle_size, const int* _total_bits, const int* _bits_per_gene) {
 
