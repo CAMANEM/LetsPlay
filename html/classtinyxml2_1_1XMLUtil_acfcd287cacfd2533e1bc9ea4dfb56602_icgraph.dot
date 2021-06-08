@@ -1,0 +1,45 @@
+digraph "tinyxml2::XMLUtil::StringEqual"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="tinyxml2::XMLUtil::\lStringEqual",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="tinyxml2::XMLElement\l::Attribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a48cf4a315cfbac7d74cd0d5ff2c5df51",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="tinyxml2::XMLElement\l::DeleteAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#aebd45aa7118964c30b32fe12e944628a",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="tinyxml2::XMLElement\l::FindAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a157750dac8037a316fd1af1a973dfa2c",tooltip="Query a specific attribute in the list."];
+  Node4 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="tinyxml2::XMLDocument\l::Identify",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLDocument.html#a25827d1bec509ad566a107e5853ed040",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="tinyxml2::XMLNode::\lParseDeep",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLNode.html#a916e498914baecbc9a1f012352ef7c69",tooltip=" "];
+  Node6 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="tinyxml2::XMLElement\l::ParseDeep",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a072998100b7d0ba5e8aeac6dd6dfb31b",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="tinyxml2::XMLText::\lShallowEqual",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLText.html#a99d8bce4dc01df889126e047f358cdfc",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="tinyxml2::XMLComment\l::ShallowEqual",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLComment.html#a965d880a99d58dd915caa88dc37a9b51",tooltip=" "];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="tinyxml2::XMLDeclaration\l::ShallowEqual",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLDeclaration.html#ae8b4d3a399857029f36c322b0801b69c",tooltip=" "];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="tinyxml2::XMLUnknown\l::ShallowEqual",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLUnknown.html#ac46767cd721d666e690a6231dfb618d1",tooltip=" "];
+  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="tinyxml2::XMLElement\l::ShallowEqual",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a61ffd7bf918a9db4aa6203d855ac5ec2",tooltip=" "];
+  Node1 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="tinyxml2::XMLUtil::\lToBool",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLUtil.html#ae5b03e0a1ca5d42052a7ac540f7aa12a",tooltip=" "];
+  Node13 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="tinyxml2::XMLElement\l::QueryBoolText",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a3fe5417d59eb8f5c4afe924b7d332736",tooltip="See QueryIntText()"];
+  Node14 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="tinyxml2::XMLElement\l::BoolText",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a68569f59f6382bcea7f5013ec59736d2",tooltip="See QueryIntText()"];
+  Node13 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="tinyxml2::XMLAttribute\l::QueryBoolValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLAttribute.html#a5f32e038954256f61c21ff20fd13a09c",tooltip="See QueryIntValue."];
+  Node16 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="tinyxml2::XMLElement\l::QueryBoolAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a14c1bb77c39689838be01838d86ca872",tooltip="See QueryIntAttribute()"];
+  Node17 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="tinyxml2::XMLElement\l::BoolAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a53eda26131e1ad1031ef8ec8adb51bd8",tooltip="See IntAttribute()"];
+}

@@ -1,0 +1,24 @@
+digraph "Game::updateAllCollisions"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Game::updateAllCollisions",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Actaulizador de todas las colisiones posibles."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Game::collisionCircleLine",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGame.html#a6604f898b113561f70c69b98a631bc81",tooltip="Funcion encargaca de detectar colision entre bola y linea."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Line::getPoints",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classLine.html#a8e1f9af6aac6b887f399437e3fb71026",tooltip="Getter para los puntos de una linea."];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Ball::getPosition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBall.html#aca94a30f92fed8012b6a634afabe28a6",tooltip="Getter para la posicion de la bola."];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Ball::getRadius",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBall.html#a01a1890f5a86e8caeb4f91660a4f5700",tooltip="Getter para el radio de la bola."];
+  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="Ball::getVelocity",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBall.html#ad51b1c53ed7b37342d9899ccd47c8fb8",tooltip="Getter para la velocidad de la bola."];
+  Node2 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="Ball::setPosition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBall.html#a44e2ab9857da80499a7229e70a5ab880",tooltip="Setter para la posicion de la bola."];
+  Node2 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="Ball::setVelocity",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBall.html#ad3660df35e2016204c6a3ccfa739913a",tooltip="Setter para la velocidad que la bola posee."];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="Board::getBorderLines",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBoard.html#a90995bf176d4fd304a3d140fcdffbd7d",tooltip="Lineas existentes con las que la bola puede colisionar."];
+}

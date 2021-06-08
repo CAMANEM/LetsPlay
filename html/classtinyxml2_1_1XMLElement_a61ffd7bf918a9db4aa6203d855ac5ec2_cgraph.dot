@@ -1,0 +1,26 @@
+digraph "tinyxml2::XMLElement::ShallowEqual"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="tinyxml2::XMLElement\l::ShallowEqual",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="tinyxml2::XMLElement\l::FirstAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a3e191704c8d499906ec11fe2f60c6686",tooltip="Return the first attribute in the list."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="tinyxml2::XMLElement\l::Name",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a63e057fb5baee1dd29f323cb85907b35",tooltip="Get the name of an element (which is the Value() of the node.)"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="tinyxml2::XMLAttribute\l::Next",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLAttribute.html#aee53571b21e7ce5421eb929523a8bbe6",tooltip="The next attribute in the list."];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="tinyxml2::XMLUtil::\lStringEqual",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLUtil.html#acfcd287cacfd2533e1bc9ea4dfb56602",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="tinyxml2::XMLNode::\lToElement",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLNode.html#aab516e699567f75cc9ab2ef2eee501e8",tooltip="Safely cast to an Element, or null."];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="tinyxml2::XMLAttribute\l::Value",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLAttribute.html#ab1c5cd993f836a771818ca408994b14e",tooltip="The value of the attribute."];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="tinyxml2::StrPair::\lGetStr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1StrPair.html#ad87e3d11330f5e689ba1e7e54c023b57",tooltip=" "];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="tinyxml2::XMLUtil::\lGetCharacterRef",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLUtil.html#a5a96e5144a8d693dc4bcd783d9964648",tooltip=" "];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="tinyxml2::XMLUtil::\lConvertUTF32ToUTF8",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLUtil.html#a31c00d5c5dfb38382de1dfcaf4be3595",tooltip=" "];
+}

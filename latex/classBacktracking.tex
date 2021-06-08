@@ -1,0 +1,164 @@
+\hypertarget{classBacktracking}{}\doxysection{Backtracking Class Reference}
+\label{classBacktracking}\index{Backtracking@{Backtracking}}
+
+
+{\ttfamily \#include $<$Backtracking.\+h$>$}
+
+
+
+Collaboration diagram for Backtracking\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classBacktracking_a43dd8bbc1ee96cffc56dab115937e0e4}{reset}} ()
+\begin{DoxyCompactList}\small\item\em resets the parallel linked lists an the visited matrix \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBacktracking_aaf4fb46dc66cf4b7d1c9c556436976ba}{set\+Obstacles}} (std\+::vector$<$ \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $>$ x, std\+::vector$<$ \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $>$ y, \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} squares)
+\begin{DoxyCompactList}\small\item\em sets the obstacles in to the matrix \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBacktracking_ab260a8a7109050ec57ea5efb50fe72c8}{road}} (\mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} i, \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} j)
+\begin{DoxyCompactList}\small\item\em gives the path fro an specific position \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBacktracking_a9afe4ead7d455ef7bd132f21470a20d3}{Backtracking}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBacktracking_aa6ab348e6d6c30cd106ab9ac4ff3bb74}{Path}} (\mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} matrix\mbox{[}9\mbox{]}\mbox{[}13\mbox{]}, \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} i, \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} j)
+\end{DoxyCompactItemize}
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTracklist}{Tracklist}} \mbox{\hyperlink{classBacktracking_a529c10845cede6637164b0f4ad3b830e}{track}} = \mbox{\hyperlink{classTracklist}{Tracklist}}()
+\item 
+\mbox{\hyperlink{classPathlist}{Pathlist}} \mbox{\hyperlink{classBacktracking_ac32f05aabe371f8a8462e06203af22bb}{path}} = \mbox{\hyperlink{classPathlist}{Pathlist}}()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 14 of file Backtracking.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBacktracking_a9afe4ead7d455ef7bd132f21470a20d3}\label{classBacktracking_a9afe4ead7d455ef7bd132f21470a20d3}} 
+\index{Backtracking@{Backtracking}!Backtracking@{Backtracking}}
+\index{Backtracking@{Backtracking}!Backtracking@{Backtracking}}
+\doxysubsubsection{\texorpdfstring{Backtracking()}{Backtracking()}}
+{\footnotesize\ttfamily Backtracking\+::\+Backtracking (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 8 of file Backtracking.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBacktracking_aa6ab348e6d6c30cd106ab9ac4ff3bb74}\label{classBacktracking_aa6ab348e6d6c30cd106ab9ac4ff3bb74}} 
+\index{Backtracking@{Backtracking}!Path@{Path}}
+\index{Path@{Path}!Backtracking@{Backtracking}}
+\doxysubsubsection{\texorpdfstring{Path()}{Path()}}
+{\footnotesize\ttfamily bool Backtracking\+::\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}}}]{matrix\mbox{[}9\mbox{]}\mbox{[}13\mbox{]},  }\item[{\mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}}}]{i,  }\item[{\mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}}}]{j }\end{DoxyParamCaption})}
+
+
+
+Definition at line 12 of file Backtracking.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classBacktracking_a43dd8bbc1ee96cffc56dab115937e0e4}\label{classBacktracking_a43dd8bbc1ee96cffc56dab115937e0e4}} 
+\index{Backtracking@{Backtracking}!reset@{reset}}
+\index{reset@{reset}!Backtracking@{Backtracking}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Backtracking\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+resets the parallel linked lists an the visited matrix 
+
+
+
+Definition at line 297 of file Backtracking.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{classBacktracking_ab260a8a7109050ec57ea5efb50fe72c8}\label{classBacktracking_ab260a8a7109050ec57ea5efb50fe72c8}} 
+\index{Backtracking@{Backtracking}!road@{road}}
+\index{road@{road}!Backtracking@{Backtracking}}
+\doxysubsubsection{\texorpdfstring{road()}{road()}}
+{\footnotesize\ttfamily void Backtracking\+::road (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}}}]{i,  }\item[{\mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}}}]{j }\end{DoxyParamCaption})}
+
+
+
+gives the path fro an specific position 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & row where the analysis is going to start \\
+\hline
+{\em j} & column where the analysis is going to start \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 326 of file Backtracking.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 5
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{classBacktracking_aaf4fb46dc66cf4b7d1c9c556436976ba}\label{classBacktracking_aaf4fb46dc66cf4b7d1c9c556436976ba}} 
+\index{Backtracking@{Backtracking}!setObstacles@{setObstacles}}
+\index{setObstacles@{setObstacles}!Backtracking@{Backtracking}}
+\doxysubsubsection{\texorpdfstring{setObstacles()}{setObstacles()}}
+{\footnotesize\ttfamily void Backtracking\+::set\+Obstacles (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $>$}]{x,  }\item[{std\+::vector$<$ \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $>$}]{y,  }\item[{\mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}}}]{squares }\end{DoxyParamCaption})}
+
+
+
+sets the obstacles in to the matrix 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & vector with the x axy values of the obstacles positions \\
+\hline
+{\em y} & vector with the y axy values of the obstacles positions \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 316 of file Backtracking.\+cpp.
+
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{classBacktracking_ac32f05aabe371f8a8462e06203af22bb}\label{classBacktracking_ac32f05aabe371f8a8462e06203af22bb}} 
+\index{Backtracking@{Backtracking}!path@{path}}
+\index{path@{path}!Backtracking@{Backtracking}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPathlist}{Pathlist}} Backtracking\+::path = \mbox{\hyperlink{classPathlist}{Pathlist}}()}
+
+
+
+Definition at line 18 of file Backtracking.\+h.
+
+\mbox{\Hypertarget{classBacktracking_a529c10845cede6637164b0f4ad3b830e}\label{classBacktracking_a529c10845cede6637164b0f4ad3b830e}} 
+\index{Backtracking@{Backtracking}!track@{track}}
+\index{track@{track}!Backtracking@{Backtracking}}
+\doxysubsubsection{\texorpdfstring{track}{track}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTracklist}{Tracklist}} Backtracking\+::track = \mbox{\hyperlink{classTracklist}{Tracklist}}()}
+
+
+
+Definition at line 17 of file Backtracking.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Backtracking/\mbox{\hyperlink{Backtracking_8h}{Backtracking.\+h}}\item 
+Backtracking/\mbox{\hyperlink{Backtracking_8cpp}{Backtracking.\+cpp}}\end{DoxyCompactItemize}

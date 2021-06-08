@@ -1,0 +1,18 @@
+digraph "tinyxml2::XMLUtil::ToFloat"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="tinyxml2::XMLUtil::\lToFloat",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="tinyxml2::XMLElement\l::QueryFloatText",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#afa332afedd93210daa6d44b88eb11e29",tooltip="See QueryIntText()"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="tinyxml2::XMLElement\l::FloatText",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a45444eb21f99ca46101545992dc2e927",tooltip="See QueryIntText()"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="tinyxml2::XMLAttribute\l::QueryFloatValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLAttribute.html#a049dea6449a6259b6cfed44a9427b607",tooltip="See QueryIntValue."];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="tinyxml2::XMLElement\l::QueryFloatAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#acd5eeddf6002ef90806af794b9d9a5a5",tooltip="See QueryIntAttribute()"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="tinyxml2::XMLElement\l::FloatAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#ab1f4be2332e27dc640e9b6abd01d64dd",tooltip="See IntAttribute()"];
+}

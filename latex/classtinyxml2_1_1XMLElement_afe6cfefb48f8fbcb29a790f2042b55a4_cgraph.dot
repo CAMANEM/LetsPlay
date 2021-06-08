@@ -1,0 +1,20 @@
+digraph "tinyxml2::XMLElement::InsertNewUnknown"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="tinyxml2::XMLElement\l::InsertNewUnknown",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="See InsertNewChildElement()"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="tinyxml2::XMLNode::\lInsertEndChild",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLNode.html#ae3b422e98914d6002ca99bb1d2837103",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="tinyxml2::XMLDocument\l::NewUnknown",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLDocument.html#a4954f502c5fd7f49de54c3c0c99bb73d",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="tinyxml2::XMLNode::\lSetValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLNode.html#a09dd68cf9eae137579f6e50f36487513",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="tinyxml2::StrPair::\lSetInternedStr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1StrPair.html#a2baf6230e18333e02ab65d0897ee3941",tooltip=" "];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="tinyxml2::StrPair::\lSetStr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1StrPair.html#a1f82ec6b5bee35ee7466d8565e43b1de",tooltip=" "];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="tinyxml2::StrPair::\lReset",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1StrPair.html#a80c1b3bd99bf62ae85c94a29ce537125",tooltip=" "];
+}

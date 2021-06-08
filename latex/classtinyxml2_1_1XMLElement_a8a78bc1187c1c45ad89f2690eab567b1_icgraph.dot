@@ -1,0 +1,10 @@
+digraph "tinyxml2::XMLElement::QueryIntAttribute"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="tinyxml2::XMLElement\l::QueryIntAttribute",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="tinyxml2::XMLElement\l::IntAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a95a89b13bb14a2d4655e2b5b406c00d4",tooltip=" "];
+}

@@ -1,0 +1,8 @@
+digraph "Futbolin" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  dir_44e94ccdef2ec2f96d9ed4be7bdbddc4 [shape=box, label="Futbolin", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_44e94ccdef2ec2f96d9ed4be7bdbddc4.html"];
+  dir_225eec8be3710e23ed913ce462c92726 [shape=box label="Backtracking" URL="dir_225eec8be3710e23ed913ce462c92726.html"];
+  dir_44e94ccdef2ec2f96d9ed4be7bdbddc4->dir_225eec8be3710e23ed913ce462c92726 [headlabel="1", labeldistance=1.5 headhref="dir_000009_000002.html"];
+}

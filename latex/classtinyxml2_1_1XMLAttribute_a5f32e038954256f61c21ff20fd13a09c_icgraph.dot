@@ -1,0 +1,12 @@
+digraph "tinyxml2::XMLAttribute::QueryBoolValue"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="tinyxml2::XMLAttribute\l::QueryBoolValue",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="See QueryIntValue."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="tinyxml2::XMLElement\l::QueryBoolAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a14c1bb77c39689838be01838d86ca872",tooltip="See QueryIntAttribute()"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="tinyxml2::XMLElement\l::BoolAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a53eda26131e1ad1031ef8ec8adb51bd8",tooltip="See IntAttribute()"];
+}

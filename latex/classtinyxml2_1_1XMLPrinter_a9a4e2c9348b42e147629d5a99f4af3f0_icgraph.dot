@@ -1,0 +1,12 @@
+digraph "tinyxml2::XMLPrinter::PushAttribute"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="tinyxml2::XMLPrinter\l::PushAttribute",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="If streaming, add an attribute to an open element."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="tinyxml2::XMLPrinter\l::PushAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLPrinter.html#a69120c82088597372d28d0a98f2ee7a1",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="tinyxml2::XMLPrinter\l::VisitEnter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLPrinter.html#a169b2509d8eabb70811b2bb8cfd1f5d1",tooltip="Visit an element."];
+}

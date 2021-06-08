@@ -1,0 +1,14 @@
+digraph "tinyxml2::XMLPrinter::PushDeclaration"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="tinyxml2::XMLPrinter\l::PushDeclaration",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="tinyxml2::XMLPrinter\l::PushHeader",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLPrinter.html#a178c608ce8476043d5d6513819cde903",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="tinyxml2::XMLPrinter\l::VisitEnter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLPrinter.html#a9aa1de11a55a07db55a90fde37d7afad",tooltip="Visit a document."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="tinyxml2::XMLPrinter\l::Visit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLPrinter.html#acfc625b2549304b9c7eb85ebd5c5eb39",tooltip="Visit a declaration."];
+}

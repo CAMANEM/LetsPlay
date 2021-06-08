@@ -1,0 +1,8 @@
+digraph "GeneticPuzzle" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  dir_6e9916d4db3f5366b13ea2f36a5615ef [shape=box, label="GeneticPuzzle", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_6e9916d4db3f5366b13ea2f36a5615ef.html"];
+  dir_24ab83976e9976d55d98b0600ae3d861 [shape=box label="XML" URL="dir_24ab83976e9976d55d98b0600ae3d861.html"];
+  dir_6e9916d4db3f5366b13ea2f36a5615ef->dir_24ab83976e9976d55d98b0600ae3d861 [headlabel="1", labeldistance=1.5 headhref="dir_000010_000014.html"];
+}

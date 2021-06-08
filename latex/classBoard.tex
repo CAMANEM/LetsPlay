@@ -1,0 +1,190 @@
+\hypertarget{classBoard}{}\doxysection{Board Class Reference}
+\label{classBoard}\index{Board@{Board}}
+
+
+{\ttfamily \#include $<$Board.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBoard_a4a1bc049fb3c11e885a9062de6e4d447}{Board}} (\mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} squares)
+\begin{DoxyCompactList}\small\item\em Constructor para el tablero. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBoard_af73f45730119a1fd8f6670f53f959e68}{$\sim$\+Board}} ()
+\begin{DoxyCompactList}\small\item\em Destructor para la clase. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classLine}{Line}} $>$ \mbox{\hyperlink{classBoard_a90995bf176d4fd304a3d140fcdffbd7d}{get\+Border\+Lines}} ()
+\begin{DoxyCompactList}\small\item\em Lineas existentes con las que la bola puede colisionar. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $>$ \mbox{\hyperlink{classBoard_a04832ec594ee08146b3d28907b3783c9}{getx\+Pos}} ()
+\begin{DoxyCompactList}\small\item\em Getter para las coordenadas x donde has obstaculos. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $>$ \mbox{\hyperlink{classBoard_a70cca96ffdcd5bde1c7d9c0e977b5a55}{gety\+Pos}} ()
+\begin{DoxyCompactList}\small\item\em Getter para las coordenadas y donde has obstaculos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBoard_aa170cb05bb38de48e19a72b51d898eca}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updater. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBoard_a7cddb8496a5a2bd2677c3324167c4964}{A\+\_\+\+Star}} (bool is\+Turn, \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} x, \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} y)
+\begin{DoxyCompactList}\small\item\em Funcion que se encarga de resover el pathfinding usando A$\ast$. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBoard_aed041b1e548aec1935e4f598eca23296}{render}} (sf\+::\+Render\+Target $\ast$target)
+\begin{DoxyCompactList}\small\item\em Funcion que se encarga de dibujar en pantalla el tablero. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 23 of file Board.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBoard_a4a1bc049fb3c11e885a9062de6e4d447}\label{classBoard_a4a1bc049fb3c11e885a9062de6e4d447}} 
+\index{Board@{Board}!Board@{Board}}
+\index{Board@{Board}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{Board()}{Board()}}
+{\footnotesize\ttfamily Board\+::\+Board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}}}]{squares }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor para el tablero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em squares} & Cantidad de obstaculos a dibujar. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 14 of file Board.\+cpp.
+
+\mbox{\Hypertarget{classBoard_af73f45730119a1fd8f6670f53f959e68}\label{classBoard_af73f45730119a1fd8f6670f53f959e68}} 
+\index{Board@{Board}!````~Board@{$\sim$Board}}
+\index{````~Board@{$\sim$Board}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{$\sim$Board()}{~Board()}}
+{\footnotesize\ttfamily Board\+::$\sim$\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor para la clase. 
+
+
+
+Definition at line 28 of file Board.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBoard_a7cddb8496a5a2bd2677c3324167c4964}\label{classBoard_a7cddb8496a5a2bd2677c3324167c4964}} 
+\index{Board@{Board}!A\_Star@{A\_Star}}
+\index{A\_Star@{A\_Star}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{A\_Star()}{A\_Star()}}
+{\footnotesize\ttfamily void Board\+::\+A\+\_\+\+Star (\begin{DoxyParamCaption}\item[{bool}]{is\+Turn,  }\item[{\mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}}}]{x,  }\item[{\mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}}}]{y }\end{DoxyParamCaption})}
+
+
+
+Funcion que se encarga de resover el pathfinding usando A$\ast$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Turn} & Bool correspondiente a si hay que resolver o no el grid. \\
+\hline
+{\em x} & Posicion x inicial. \\
+\hline
+{\em y} & Posicion y inicial. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 182 of file Board.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 0
+\mbox{\Hypertarget{classBoard_a90995bf176d4fd304a3d140fcdffbd7d}\label{classBoard_a90995bf176d4fd304a3d140fcdffbd7d}} 
+\index{Board@{Board}!getBorderLines@{getBorderLines}}
+\index{getBorderLines@{getBorderLines}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{getBorderLines()}{getBorderLines()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classLine}{Line}} $>$ Board\+::get\+Border\+Lines (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Lineas existentes con las que la bola puede colisionar. 
+
+\begin{DoxyReturn}{Returns}
+Vector de lineas. 
+\end{DoxyReturn}
+
+
+Definition at line 164 of file Board.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{classBoard_a04832ec594ee08146b3d28907b3783c9}\label{classBoard_a04832ec594ee08146b3d28907b3783c9}} 
+\index{Board@{Board}!getxPos@{getxPos}}
+\index{getxPos@{getxPos}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{getxPos()}{getxPos()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $>$ Board\+::getx\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter para las coordenadas x donde has obstaculos. 
+
+\begin{DoxyReturn}{Returns}
+Casillas x. 
+\end{DoxyReturn}
+
+
+Definition at line 168 of file Board.\+cpp.
+
+\mbox{\Hypertarget{classBoard_a70cca96ffdcd5bde1c7d9c0e977b5a55}\label{classBoard_a70cca96ffdcd5bde1c7d9c0e977b5a55}} 
+\index{Board@{Board}!getyPos@{getyPos}}
+\index{getyPos@{getyPos}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{getyPos()}{getyPos()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $>$ Board\+::gety\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter para las coordenadas y donde has obstaculos. 
+
+\begin{DoxyReturn}{Returns}
+Casillas y. 
+\end{DoxyReturn}
+
+
+Definition at line 172 of file Board.\+cpp.
+
+\mbox{\Hypertarget{classBoard_aed041b1e548aec1935e4f598eca23296}\label{classBoard_aed041b1e548aec1935e4f598eca23296}} 
+\index{Board@{Board}!render@{render}}
+\index{render@{render}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Board\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target $\ast$}]{target }\end{DoxyParamCaption})}
+
+
+
+Funcion que se encarga de dibujar en pantalla el tablero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Ventana sobre la cual trabajar. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 242 of file Board.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classBoard_aa170cb05bb38de48e19a72b51d898eca}\label{classBoard_aa170cb05bb38de48e19a72b51d898eca}} 
+\index{Board@{Board}!update@{update}}
+\index{update@{update}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Board\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updater. 
+
+
+
+Definition at line 178 of file Board.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Futbolin/\mbox{\hyperlink{Board_8h}{Board.\+h}}\item 
+Futbolin/\mbox{\hyperlink{Board_8cpp}{Board.\+cpp}}\end{DoxyCompactItemize}

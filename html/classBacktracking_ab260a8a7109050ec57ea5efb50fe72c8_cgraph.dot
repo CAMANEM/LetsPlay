@@ -1,0 +1,45 @@
+digraph "Backtracking::road"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Backtracking::road",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="gives the path fro an specific position"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Backtracking::Path",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBacktracking.html#aa6ab348e6d6c30cd106ab9ac4ff3bb74",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Tracklist::insert",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTracklist.html#af55ebedbb885b9e94d84200c7f8aed9c",tooltip="inserts a matrix with the actual state of if, the one could be use by the Backtracking"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Tracknode::setMatrix",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTracknode.html#a2fc3579b4bff71c1a79946550ecfe880",tooltip="sets the matrix associated to the node"];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Tracknode::setNext",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTracknode.html#a343e2a57eca952ed16babf3a7a52693e",tooltip="sets the next node of the current node"];
+  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Pathlist::insert",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPathlist.html#a88f1f2e3b19014694c681e8a38f471e9",tooltip="inserts the x and y poss related to a possible path position"];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Pathnode::setNext",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPathnode.html#aba7ca07fcdc19dc53f34da00884f2483",tooltip="sets the next node of the current node"];
+  Node6 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Pathnode::setPos",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPathnode.html#aab6e8087eb99717da7eff197cd5313c6",tooltip="sets the x and y values associated to the node"];
+  Node2 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Tracklist::remove",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTracklist.html#af0a5789f383854ad15d9e81182fae810",tooltip="removes the last element of the linked list"];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="Tracknode::getNext",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTracknode.html#a462ece04fa7600fd9004fb1e272356a7",tooltip="get the next node"];
+  Node9 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="Pathlist::remove",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPathlist.html#a1aa781b3e80fde88dab9a4f17ac140b7",tooltip="removes the last element of the linked list"];
+  Node11 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="Pathnode::getNext",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPathnode.html#acbc2a8c774e147f7b822f652cbeceedd",tooltip="get the next node"];
+  Node11 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="Pathlist::show",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPathlist.html#aac1853f4e0446b2648b9c81a9b586783",tooltip="shows the list content"];
+  Node13 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="Pathnode::getX",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPathnode.html#af1fb2f252dd7183bfbc3c66a64bcc4d5",tooltip="return the x poss of the node"];
+  Node13 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="Pathnode::getY",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPathnode.html#a59ef21b25228863e4a41d91d712ad2ba",tooltip="return the y poss of the node"];
+  Node1 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="Backtracking::reset",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBacktracking.html#a43dd8bbc1ee96cffc56dab115937e0e4",tooltip="resets the parallel linked lists an the visited matrix"];
+  Node16 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="Tracklist::reset",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTracklist.html#a1d8f9a9a4151d212765757c6cd38baca",tooltip="resets the list content"];
+  Node16 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="Pathlist::reset",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPathlist.html#a6cbefbb997f8d8434bf758b18ad51f4f",tooltip="resets the list content"];
+}

@@ -1,0 +1,30 @@
+digraph "tinyxml2::XMLPrinter::Putc"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="tinyxml2::XMLPrinter\l::Putc",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="tinyxml2::XMLPrinter\l::CloseElement",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLPrinter.html#af1fb439e5d800999646f333fa2f0699a",tooltip="If streaming, close the Element."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="tinyxml2::XMLPrinter\l::VisitExit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLPrinter.html#a2edd48405971a88951c71c9df86a2f50",tooltip="Visit an element."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="tinyxml2::XMLPrinter\l::PushAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLPrinter.html#a9a4e2c9348b42e147629d5a99f4af3f0",tooltip="If streaming, add an attribute to an open element."];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="tinyxml2::XMLPrinter\l::PushAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLPrinter.html#a69120c82088597372d28d0a98f2ee7a1",tooltip=" "];
+  Node4 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="tinyxml2::XMLPrinter\l::VisitEnter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLPrinter.html#a169b2509d8eabb70811b2bb8cfd1f5d1",tooltip="Visit an element."];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="tinyxml2::XMLPrinter\l::PushUnknown",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLPrinter.html#ab1efc6d1548505e9984185f58f54b713",tooltip=" "];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="tinyxml2::XMLPrinter\l::Visit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLPrinter.html#ab8af5455bbf9e4be2663e6642fcd7e32",tooltip="Visit an unknown node."];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="tinyxml2::XMLPrinter\l::SealElementIfJustOpened",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLPrinter.html#ac6e2c72c5d796f5b4de6ce81ca95e3fa",tooltip=" "];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="tinyxml2::XMLPrinter\l::PushText",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLPrinter.html#a1cc16a9362df4332012cb13cff6441b3",tooltip="Add a text node."];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="tinyxml2::XMLPrinter\l::PushText",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLPrinter.html#a96b0a0bfe105154a0a6c37d725258f0a",tooltip="Add a text node from a signed 64bit integer."];
+  Node10 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="tinyxml2::XMLPrinter\l::Visit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLPrinter.html#adc0e42b4f6fcb90a95630c79575d030b",tooltip="Visit a text node."];
+}

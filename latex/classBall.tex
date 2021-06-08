@@ -1,0 +1,473 @@
+\hypertarget{classBall}{}\doxysection{Ball Class Reference}
+\label{classBall}\index{Ball@{Ball}}
+
+
+{\ttfamily \#include $<$Ball.\+h$>$}
+
+
+
+Inheritance diagram for Ball\+:
+% FIG 0
+
+
+Collaboration diagram for Ball\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBall_a86a144d3dad6c953e422e32435923bbb}{Ball}} ()
+\begin{DoxyCompactList}\small\item\em Constructor para el objeto. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBall_aa3627958f54e4cb38658c216fa44a6a8}{Ball}} (sf\+::\+Vector2f center, float radius, sf\+::\+Color color)
+\begin{DoxyCompactList}\small\item\em Constructor para el objeto con variables definidas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBall_a20f2f6ac0bf648f406a8e12e63429fcd}{$\sim$\+Ball}} ()
+\begin{DoxyCompactList}\small\item\em Destructor del objeto. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBall_a7a116bb944345e184bc1909324ad1e3a}{Ball}} (const \mbox{\hyperlink{classBall}{Ball}} \&)
+\begin{DoxyCompactList}\small\item\em Constructor de una bola a partir de otra. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBall}{Ball}} \& \mbox{\hyperlink{classBall_a20d6b16e594e91b702599b2e5aab1e9e}{operator=}} (const \mbox{\hyperlink{classBall}{Ball}} \&)
+\begin{DoxyCompactList}\small\item\em Igualar valores de una bola a otra. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBall_a44e2ab9857da80499a7229e70a5ab880}{set\+Position}} (float x, float y)
+\begin{DoxyCompactList}\small\item\em Setter para la posicion de la bola. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBall_af535b96062e12671a35f6f818c8a098d}{set\+Angle}} (float angle)
+\begin{DoxyCompactList}\small\item\em Setter para el angulo en que la bola se encuentra apuntando. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBall_a201beddecea22d7567bccc5e57268b8e}{set\+Acceleration}} (sf\+::\+Vector2f acceleration)
+\begin{DoxyCompactList}\small\item\em Setter para la aceleracion que posee la bola. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBall_ad3660df35e2016204c6a3ccfa739913a}{set\+Velocity}} (sf\+::\+Vector2f velocity)
+\begin{DoxyCompactList}\small\item\em Setter para la velocidad que la bola posee. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{classBall_aca94a30f92fed8012b6a634afabe28a6}{get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Getter para la posicion de la bola. \end{DoxyCompactList}\item 
+const sf\+::\+Vector2f \mbox{\hyperlink{classBall_ad51b1c53ed7b37342d9899ccd47c8fb8}{get\+Velocity}} () const
+\begin{DoxyCompactList}\small\item\em Getter para la velocidad de la bola. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{classBall_a83186e9eefceee098049ac4eb9ceb6ee}{get\+Acceleration}} ()
+\begin{DoxyCompactList}\small\item\em Getter para la aceleracion de la bola. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classBall_a01a1890f5a86e8caeb4f91660a4f5700}{get\+Radius}} ()
+\begin{DoxyCompactList}\small\item\em Getter para el radio de la bola. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classBall_a29f534fe6b99e133059ca0ca30000c8e}{get\+Mass}} ()
+\begin{DoxyCompactList}\small\item\em Getter para la masa de la bola. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBall_ab82c6d6ddf94c3b206c347e6f2744489}{move}} (sf\+::\+Vector2f velocity)
+\begin{DoxyCompactList}\small\item\em Funcion encargada de mover la bola con respecto a los valores de un vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBall_a3d981b1a07c1593e3dd37eb6b569427d}{rotate}} (float angle)
+\begin{DoxyCompactList}\small\item\em Rotacion a darle a la bola. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBall_a3cf129bc13dd9b434abd463637018236}{update\+Velocity}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Funcion encargada de actualizar la velocidad con la que debe de moverse la bola. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBall_a35df54cce8d0950c367176ef0a1f8fea}{check\+Collision\+Point}} (const sf\+::\+Vector2f \&mouse)
+\begin{DoxyCompactList}\small\item\em Funcion encargada de verificar si el mouse se encuentra encima de la bola. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBall_a8bbed51de00e2c1304ad6753fd226ca8}{update\+Collision\+Border}} (const sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Funcion encargada de verificar si la bola ha colisionado con algun borde correspondiente al tablero. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBall_a9c1dc83b2dfe2ba1ee62e3cfc74f32a7}{update}} (const sf\+::\+Render\+Window \&window, float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Actualizador de las variables de la bola. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBall_acdaa49a93de8951c0c5a0fe565657258}{render}} ()
+\begin{DoxyCompactList}\small\item\em Reenderizacion en pantalla de la bola. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 17 of file Ball.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBall_a86a144d3dad6c953e422e32435923bbb}\label{classBall_a86a144d3dad6c953e422e32435923bbb}} 
+\index{Ball@{Ball}!Ball@{Ball}}
+\index{Ball@{Ball}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{Ball()}{Ball()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Ball\+::\+Ball (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor para el objeto. 
+
+
+
+Definition at line 40 of file Ball.\+cpp.
+
+\mbox{\Hypertarget{classBall_aa3627958f54e4cb38658c216fa44a6a8}\label{classBall_aa3627958f54e4cb38658c216fa44a6a8}} 
+\index{Ball@{Ball}!Ball@{Ball}}
+\index{Ball@{Ball}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{Ball()}{Ball()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Ball\+::\+Ball (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{center,  }\item[{float}]{radius,  }\item[{sf\+::\+Color}]{color }\end{DoxyParamCaption})}
+
+
+
+Constructor para el objeto con variables definidas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em center} & Coordenadas para el centro de la bola. \\
+\hline
+{\em radius} & Radio correspondiente a la bola. \\
+\hline
+{\em color} & Color de la bola. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 45 of file Ball.\+cpp.
+
+\mbox{\Hypertarget{classBall_a20f2f6ac0bf648f406a8e12e63429fcd}\label{classBall_a20f2f6ac0bf648f406a8e12e63429fcd}} 
+\index{Ball@{Ball}!````~Ball@{$\sim$Ball}}
+\index{````~Ball@{$\sim$Ball}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{$\sim$Ball()}{~Ball()}}
+{\footnotesize\ttfamily Ball\+::$\sim$\+Ball (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor del objeto. 
+
+
+
+Definition at line 73 of file Ball.\+cpp.
+
+\mbox{\Hypertarget{classBall_a7a116bb944345e184bc1909324ad1e3a}\label{classBall_a7a116bb944345e184bc1909324ad1e3a}} 
+\index{Ball@{Ball}!Ball@{Ball}}
+\index{Ball@{Ball}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{Ball()}{Ball()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Ball\+::\+Ball (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classBall}{Ball}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Constructor de una bola a partir de otra. 
+
+
+
+Definition at line 55 of file Ball.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBall_a35df54cce8d0950c367176ef0a1f8fea}\label{classBall_a35df54cce8d0950c367176ef0a1f8fea}} 
+\index{Ball@{Ball}!checkCollisionPoint@{checkCollisionPoint}}
+\index{checkCollisionPoint@{checkCollisionPoint}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{checkCollisionPoint()}{checkCollisionPoint()}}
+{\footnotesize\ttfamily bool Ball\+::check\+Collision\+Point (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{mouse }\end{DoxyParamCaption})}
+
+
+
+Funcion encargada de verificar si el mouse se encuentra encima de la bola. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mouse} & Coordenadas correspondientes a la posicion del mouse. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Bool correspondiente al resultado de la verificacion. 
+\end{DoxyReturn}
+
+
+Definition at line 159 of file Ball.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classBall_a83186e9eefceee098049ac4eb9ceb6ee}\label{classBall_a83186e9eefceee098049ac4eb9ceb6ee}} 
+\index{Ball@{Ball}!getAcceleration@{getAcceleration}}
+\index{getAcceleration@{getAcceleration}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{getAcceleration()}{getAcceleration()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Ball\+::get\+Acceleration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter para la aceleracion de la bola. 
+
+\begin{DoxyReturn}{Returns}
+La aceleracion de la bola. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBall_a29f534fe6b99e133059ca0ca30000c8e}\label{classBall_a29f534fe6b99e133059ca0ca30000c8e}} 
+\index{Ball@{Ball}!getMass@{getMass}}
+\index{getMass@{getMass}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{getMass()}{getMass()}}
+{\footnotesize\ttfamily float Ball\+::get\+Mass (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter para la masa de la bola. 
+
+\begin{DoxyReturn}{Returns}
+La masa de la bola. 
+\end{DoxyReturn}
+
+
+Definition at line 115 of file Ball.\+cpp.
+
+\mbox{\Hypertarget{classBall_aca94a30f92fed8012b6a634afabe28a6}\label{classBall_aca94a30f92fed8012b6a634afabe28a6}} 
+\index{Ball@{Ball}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Ball\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter para la posicion de la bola. 
+
+\begin{DoxyReturn}{Returns}
+La posicion de la bola. 
+\end{DoxyReturn}
+
+
+Definition at line 107 of file Ball.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classBall_a01a1890f5a86e8caeb4f91660a4f5700}\label{classBall_a01a1890f5a86e8caeb4f91660a4f5700}} 
+\index{Ball@{Ball}!getRadius@{getRadius}}
+\index{getRadius@{getRadius}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{getRadius()}{getRadius()}}
+{\footnotesize\ttfamily float Ball\+::get\+Radius (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter para el radio de la bola. 
+
+\begin{DoxyReturn}{Returns}
+El radio de la bola. 
+\end{DoxyReturn}
+
+
+Definition at line 111 of file Ball.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{classBall_ad51b1c53ed7b37342d9899ccd47c8fb8}\label{classBall_ad51b1c53ed7b37342d9899ccd47c8fb8}} 
+\index{Ball@{Ball}!getVelocity@{getVelocity}}
+\index{getVelocity@{getVelocity}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{getVelocity()}{getVelocity()}}
+{\footnotesize\ttfamily const sf\+::\+Vector2f Ball\+::get\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter para la velocidad de la bola. 
+
+\begin{DoxyReturn}{Returns}
+La velocidad de la bola. 
+\end{DoxyReturn}
+
+
+Definition at line 93 of file Ball.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{classBall_ab82c6d6ddf94c3b206c347e6f2744489}\label{classBall_ab82c6d6ddf94c3b206c347e6f2744489}} 
+\index{Ball@{Ball}!move@{move}}
+\index{move@{move}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Ball\+::move (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{velocity }\end{DoxyParamCaption})}
+
+
+
+Funcion encargada de mover la bola con respecto a los valores de un vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em velocity} & Valores con los que mover la bola. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 123 of file Ball.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{classBall_a20d6b16e594e91b702599b2e5aab1e9e}\label{classBall_a20d6b16e594e91b702599b2e5aab1e9e}} 
+\index{Ball@{Ball}!operator=@{operator=}}
+\index{operator=@{operator=}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBall}{Ball}} \& Ball\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classBall}{Ball}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Igualar valores de una bola a otra. 
+
+\begin{DoxyReturn}{Returns}
+Bola modificada. 
+\end{DoxyReturn}
+
+
+Definition at line 63 of file Ball.\+cpp.
+
+\mbox{\Hypertarget{classBall_acdaa49a93de8951c0c5a0fe565657258}\label{classBall_acdaa49a93de8951c0c5a0fe565657258}} 
+\index{Ball@{Ball}!render@{render}}
+\index{render@{render}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Ball\+::render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reenderizacion en pantalla de la bola. 
+
+\mbox{\Hypertarget{classBall_a3d981b1a07c1593e3dd37eb6b569427d}\label{classBall_a3d981b1a07c1593e3dd37eb6b569427d}} 
+\index{Ball@{Ball}!rotate@{rotate}}
+\index{rotate@{rotate}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily void Ball\+::rotate (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+
+
+Rotacion a darle a la bola. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & Angulo con el cual la bola debe de rotar. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 131 of file Ball.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{classBall_a201beddecea22d7567bccc5e57268b8e}\label{classBall_a201beddecea22d7567bccc5e57268b8e}} 
+\index{Ball@{Ball}!setAcceleration@{setAcceleration}}
+\index{setAcceleration@{setAcceleration}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{setAcceleration()}{setAcceleration()}}
+{\footnotesize\ttfamily void Ball\+::set\+Acceleration (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{acceleration }\end{DoxyParamCaption})}
+
+
+
+Setter para la aceleracion que posee la bola. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em acceleration} & Valor a darle a la aceleracion. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 83 of file Ball.\+cpp.
+
+\mbox{\Hypertarget{classBall_af535b96062e12671a35f6f818c8a098d}\label{classBall_af535b96062e12671a35f6f818c8a098d}} 
+\index{Ball@{Ball}!setAngle@{setAngle}}
+\index{setAngle@{setAngle}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{setAngle()}{setAngle()}}
+{\footnotesize\ttfamily void Ball\+::set\+Angle (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+
+
+Setter para el angulo en que la bola se encuentra apuntando. 
+
+
+
+Definition at line 127 of file Ball.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{classBall_a44e2ab9857da80499a7229e70a5ab880}\label{classBall_a44e2ab9857da80499a7229e70a5ab880}} 
+\index{Ball@{Ball}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Ball\+::set\+Position (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+
+
+Setter para la posicion de la bola. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Coordenada x. \\
+\hline
+{\em y} & Coordenada y. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 77 of file Ball.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{classBall_ad3660df35e2016204c6a3ccfa739913a}\label{classBall_ad3660df35e2016204c6a3ccfa739913a}} 
+\index{Ball@{Ball}!setVelocity@{setVelocity}}
+\index{setVelocity@{setVelocity}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{setVelocity()}{setVelocity()}}
+{\footnotesize\ttfamily void Ball\+::set\+Velocity (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{velocity }\end{DoxyParamCaption})}
+
+
+
+Setter para la velocidad que la bola posee. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em velocity} & Velocidad a darle a la bola. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 89 of file Ball.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 10
+\mbox{\Hypertarget{classBall_a9c1dc83b2dfe2ba1ee62e3cfc74f32a7}\label{classBall_a9c1dc83b2dfe2ba1ee62e3cfc74f32a7}} 
+\index{Ball@{Ball}!update@{update}}
+\index{update@{update}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Ball\+::update (\begin{DoxyParamCaption}\item[{const sf\+::\+Render\+Window \&}]{window,  }\item[{float}]{delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Actualizador de las variables de la bola. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Ventana sobre la cual trabajar. \\
+\hline
+{\em delta\+Time} & Tiempo que ha pasado desde la ultima actualizacion. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 174 of file Ball.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 11
+Here is the caller graph for this function\+:
+% FIG 12
+\mbox{\Hypertarget{classBall_a8bbed51de00e2c1304ad6753fd226ca8}\label{classBall_a8bbed51de00e2c1304ad6753fd226ca8}} 
+\index{Ball@{Ball}!updateCollisionBorder@{updateCollisionBorder}}
+\index{updateCollisionBorder@{updateCollisionBorder}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{updateCollisionBorder()}{updateCollisionBorder()}}
+{\footnotesize\ttfamily void Ball\+::update\+Collision\+Border (\begin{DoxyParamCaption}\item[{const sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Funcion encargada de verificar si la bola ha colisionado con algun borde correspondiente al tablero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Ventana sobre la cual trabajar. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 135 of file Ball.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 13
+Here is the caller graph for this function\+:
+% FIG 14
+\mbox{\Hypertarget{classBall_a3cf129bc13dd9b434abd463637018236}\label{classBall_a3cf129bc13dd9b434abd463637018236}} 
+\index{Ball@{Ball}!updateVelocity@{updateVelocity}}
+\index{updateVelocity@{updateVelocity}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{updateVelocity()}{updateVelocity()}}
+{\footnotesize\ttfamily void Ball\+::update\+Velocity (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Funcion encargada de actualizar la velocidad con la que debe de moverse la bola. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & Tiempo que ha pasado entre las actualizaciones. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 97 of file Ball.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 15
+Here is the caller graph for this function\+:
+% FIG 16
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Futbolin/\mbox{\hyperlink{Ball_8h}{Ball.\+h}}\item 
+Futbolin/\mbox{\hyperlink{Ball_8cpp}{Ball.\+cpp}}\end{DoxyCompactItemize}

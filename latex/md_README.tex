@@ -1,0 +1,30 @@
+\hypertarget{md_README_autotoc_md1}{}\doxysubsection{Project \#2 -\/ Algorithms and Data Structures I\+I -\/ CE}\label{md_README_autotoc_md1}
+Requisites\+:
+
+
+\begin{DoxyItemize}
+\item C++ (at least C++ 17)
+\item Spd\+Log
+\item S\+F\+ML
+\item Boost
+\end{DoxyItemize}
+
+Spd\+Log installation on Linux\+: \begin{DoxyVerb}sudo apt update
+sudo apt install libspdlog-dev
+\end{DoxyVerb}
+
+
+S\+F\+ML installation on Linux\+: \begin{DoxyVerb}sudo apt-get install libsfml-dev
+\end{DoxyVerb}
+
+
+Boost installation on Linux\+: \begin{DoxyVerb}sudo apt-get install libboost-all-dev
+\end{DoxyVerb}
+
+
+If using C\+Lion, add to the Cmake\+Lists.\+txt\+: \begin{DoxyVerb}link_directories(SFML_LIBRARY_DIR)
+include_directories(SFML_INCLUDE_DIR)
+find_package(SFML 2.5.1 COMPONENTS system window graphics network audio)
+target_link_libraries(LetsPlay sfml-graphics sfml-window sfml-system)
+\end{DoxyVerb}
+ 

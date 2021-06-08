@@ -1,0 +1,18 @@
+digraph "tinyxml2::XMLUtil::ToUnsigned64"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="tinyxml2::XMLUtil::\lToUnsigned64",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="tinyxml2::XMLElement\l::QueryUnsigned64Text",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#ac2239b3bd172ad8f5b78d04d4236144b",tooltip="See QueryIntText()"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="tinyxml2::XMLElement\l::Unsigned64Text",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#af48c1023abbac1acdf4927c51c3a5f0c",tooltip="See QueryIntText()"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="tinyxml2::XMLAttribute\l::QueryUnsigned64Value",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLAttribute.html#af793c695e7ee65cf20b8010d38b1d157",tooltip="See QueryIntValue."];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="tinyxml2::XMLElement\l::QueryUnsigned64Attribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a13dd590b5d3958ce2ed79844aacd9405",tooltip="See QueryIntAttribute()"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="tinyxml2::XMLElement\l::Unsigned64Attribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a226502bab8f1be7ede1fdd255398eb85",tooltip="See IntAttribute()"];
+}

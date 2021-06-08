@@ -1,0 +1,17 @@
+digraph "tinyxml2::callfopen"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="tinyxml2::callfopen",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="tinyxml2::XMLDocument\l::LoadFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLDocument.html#a2ebd4647a8af5fc6831b294ac26a150a",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="XML::Modification",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXML.html#ac0d718411e6d11d44c1549c9ac334529",tooltip="modifies an specific element of an XML file"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="tinyxml2::XMLDocument\l::SaveFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLDocument.html#a73ac416b4a2aa0952e841220eb3da18f",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="XML::Construction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXML.html#a31a766a4cf0fdbfe06bf570295ab3f68",tooltip="Creates and saves the basic structure of an XML file."];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

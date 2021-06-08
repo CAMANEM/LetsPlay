@@ -1,0 +1,121 @@
+\hypertarget{classChromosome}{}\doxysection{Chromosome Class Reference}
+\label{classChromosome}\index{Chromosome@{Chromosome}}
+
+
+{\ttfamily \#include $<$Chromosome.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classChromosome_a987708dc95eb0993d0c0ee6ea7e01965}{Chromosome}} (const \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $\ast$\+\_\+puzzle\+\_\+size, const \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $\ast$\+\_\+total\+\_\+bits, const \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $\ast$\+\_\+bits\+\_\+per\+\_\+gene)
+\begin{DoxyCompactList}\small\item\em Constructor utilizado para generar un cromosoma aleatorio para la primera población. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classChromosome_a8e74a5e4b7b467659aa198eb10919595}{Chromosome}} (\mbox{\hyperlink{classChromosome}{Chromosome}} $\ast$father, \mbox{\hyperlink{classChromosome}{Chromosome}} $\ast$mother, const \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $\ast$\+\_\+puzzle\+\_\+size, const \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $\ast$\+\_\+total\+\_\+bits, const \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $\ast$\+\_\+bits\+\_\+per\+\_\+gene, bool first\+Child)
+\item 
+\mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} \mbox{\hyperlink{classChromosome_a54581eada7550d53858b474c9980e949}{get\+Fitness}} () const
+\begin{DoxyCompactList}\small\item\em Retorna el fitness del cromosoma ó individuo. \end{DoxyCompactList}\item 
+const boost\+::dynamic\+\_\+bitset \& \mbox{\hyperlink{classChromosome_ad2c52abd259627e513853e70566817f7}{get\+Genes}} () const
+\begin{DoxyCompactList}\small\item\em Retorna los valores del cromosoma. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $>$ \mbox{\hyperlink{classChromosome_a4e9630157a5facaddf2a0741adf2bb0e}{get\+Puzzle}} (const \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $\ast$\+\_\+puzzle\+\_\+size, const \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $\ast$\+\_\+total\+\_\+bits, const \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $\ast$\+\_\+bits\+\_\+per\+\_\+gene)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 12 of file Chromosome.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classChromosome_a987708dc95eb0993d0c0ee6ea7e01965}\label{classChromosome_a987708dc95eb0993d0c0ee6ea7e01965}} 
+\index{Chromosome@{Chromosome}!Chromosome@{Chromosome}}
+\index{Chromosome@{Chromosome}!Chromosome@{Chromosome}}
+\doxysubsubsection{\texorpdfstring{Chromosome()}{Chromosome()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Chromosome\+::\+Chromosome (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $\ast$}]{\+\_\+puzzle\+\_\+size,  }\item[{const \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $\ast$}]{\+\_\+total\+\_\+bits,  }\item[{const \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $\ast$}]{\+\_\+bits\+\_\+per\+\_\+gene }\end{DoxyParamCaption})}
+
+
+
+Constructor utilizado para generar un cromosoma aleatorio para la primera población. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+puzzle\+\_\+size} & numero de piezas del puzzle \\
+\hline
+{\em total\+\_\+bits} & numero total de bits que se necesita cualquier cromosoma para representar un individuo \\
+\hline
+{\em \+\_\+bits\+\_\+per\+\_\+gene} & numero minimo de bits necesarios para formar un gen o celula. En este caso un numero entre 0 hasta el numero de piezas del puzzle \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 140 of file Chromosome.\+cpp.
+
+\mbox{\Hypertarget{classChromosome_a8e74a5e4b7b467659aa198eb10919595}\label{classChromosome_a8e74a5e4b7b467659aa198eb10919595}} 
+\index{Chromosome@{Chromosome}!Chromosome@{Chromosome}}
+\index{Chromosome@{Chromosome}!Chromosome@{Chromosome}}
+\doxysubsubsection{\texorpdfstring{Chromosome()}{Chromosome()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Chromosome\+::\+Chromosome (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classChromosome}{Chromosome}} $\ast$}]{father,  }\item[{\mbox{\hyperlink{classChromosome}{Chromosome}} $\ast$}]{mother,  }\item[{const \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $\ast$}]{\+\_\+puzzle\+\_\+size,  }\item[{const \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $\ast$}]{\+\_\+total\+\_\+bits,  }\item[{const \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $\ast$}]{\+\_\+bits\+\_\+per\+\_\+gene,  }\item[{bool}]{first\+Child }\end{DoxyParamCaption})}
+
+
+
+Definition at line 110 of file Chromosome.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 0
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classChromosome_a54581eada7550d53858b474c9980e949}\label{classChromosome_a54581eada7550d53858b474c9980e949}} 
+\index{Chromosome@{Chromosome}!getFitness@{getFitness}}
+\index{getFitness@{getFitness}!Chromosome@{Chromosome}}
+\doxysubsubsection{\texorpdfstring{getFitness()}{getFitness()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} Chromosome\+::get\+Fitness (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retorna el fitness del cromosoma ó individuo. 
+
+\begin{DoxyReturn}{Returns}
+fitness entre mayor sea, más cerca está esta solución de representar al rompecabezas final 
+\end{DoxyReturn}
+
+
+Definition at line 7 of file Chromosome.\+cpp.
+
+\mbox{\Hypertarget{classChromosome_ad2c52abd259627e513853e70566817f7}\label{classChromosome_ad2c52abd259627e513853e70566817f7}} 
+\index{Chromosome@{Chromosome}!getGenes@{getGenes}}
+\index{getGenes@{getGenes}!Chromosome@{Chromosome}}
+\doxysubsubsection{\texorpdfstring{getGenes()}{getGenes()}}
+{\footnotesize\ttfamily const boost\+::dynamic\+\_\+bitset \& Chromosome\+::get\+Genes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retorna los valores del cromosoma. 
+
+\begin{DoxyReturn}{Returns}
+genes 
+\end{DoxyReturn}
+
+
+Definition at line 173 of file Chromosome.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{classChromosome_a4e9630157a5facaddf2a0741adf2bb0e}\label{classChromosome_a4e9630157a5facaddf2a0741adf2bb0e}} 
+\index{Chromosome@{Chromosome}!getPuzzle@{getPuzzle}}
+\index{getPuzzle@{getPuzzle}!Chromosome@{Chromosome}}
+\doxysubsubsection{\texorpdfstring{getPuzzle()}{getPuzzle()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $>$ Chromosome\+::get\+Puzzle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $\ast$}]{\+\_\+puzzle\+\_\+size,  }\item[{const \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $\ast$}]{\+\_\+total\+\_\+bits,  }\item[{const \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} $\ast$}]{\+\_\+bits\+\_\+per\+\_\+gene }\end{DoxyParamCaption})}
+
+
+
+Definition at line 61 of file Chromosome.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 2
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Genetic\+Puzzle/\mbox{\hyperlink{Chromosome_8h}{Chromosome.\+h}}\item 
+Genetic\+Puzzle/\mbox{\hyperlink{Chromosome_8cpp}{Chromosome.\+cpp}}\end{DoxyCompactItemize}

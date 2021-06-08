@@ -1,0 +1,18 @@
+digraph "Game::render"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Game::render",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Pathlist::getHead",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPathlist.html#a7f59f5d2d7b0224f03cc869f48e90dc2",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Pathnode::getNext",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPathnode.html#acbc2a8c774e147f7b822f652cbeceedd",tooltip="get the next node"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Pathnode::getX",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPathnode.html#af1fb2f252dd7183bfbc3c66a64bcc4d5",tooltip="return the x poss of the node"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Pathnode::getY",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPathnode.html#a59ef21b25228863e4a41d91d712ad2ba",tooltip="return the y poss of the node"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Board::render",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBoard.html#aed041b1e548aec1935e4f598eca23296",tooltip="Funcion que se encarga de dibujar en pantalla el tablero."];
+}

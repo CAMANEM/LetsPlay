@@ -1,0 +1,10 @@
+digraph "GUI" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  dir_171b764decf33d63a7df2fab4f4bc6d8 [shape=box, label="GUI", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_171b764decf33d63a7df2fab4f4bc6d8.html"];
+  dir_44e94ccdef2ec2f96d9ed4be7bdbddc4 [shape=box label="Futbolin" URL="dir_44e94ccdef2ec2f96d9ed4be7bdbddc4.html"];
+  dir_6e9916d4db3f5366b13ea2f36a5615ef [shape=box label="GeneticPuzzle" URL="dir_6e9916d4db3f5366b13ea2f36a5615ef.html"];
+  dir_171b764decf33d63a7df2fab4f4bc6d8->dir_44e94ccdef2ec2f96d9ed4be7bdbddc4 [headlabel="2", labeldistance=1.5 headhref="dir_000011_000009.html"];
+  dir_171b764decf33d63a7df2fab4f4bc6d8->dir_6e9916d4db3f5366b13ea2f36a5615ef [headlabel="1", labeldistance=1.5 headhref="dir_000011_000010.html"];
+}

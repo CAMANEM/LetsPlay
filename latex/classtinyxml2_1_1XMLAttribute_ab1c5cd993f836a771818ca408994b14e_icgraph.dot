@@ -1,0 +1,58 @@
+digraph "tinyxml2::XMLAttribute::Value"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="tinyxml2::XMLAttribute\l::Value",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="The value of the attribute."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="tinyxml2::XMLElement\l::Attribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a48cf4a315cfbac7d74cd0d5ff2c5df51",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="tinyxml2::XMLAttribute\l::QueryBoolValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLAttribute.html#a5f32e038954256f61c21ff20fd13a09c",tooltip="See QueryIntValue."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="tinyxml2::XMLElement\l::QueryBoolAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a14c1bb77c39689838be01838d86ca872",tooltip="See QueryIntAttribute()"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="tinyxml2::XMLElement\l::BoolAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a53eda26131e1ad1031ef8ec8adb51bd8",tooltip="See IntAttribute()"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="tinyxml2::XMLAttribute\l::QueryDoubleValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLAttribute.html#a2aa6e55e8ea03af0609cf6690bff79b9",tooltip="See QueryIntValue."];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="tinyxml2::XMLElement\l::QueryDoubleAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a5f0964e2dbd8e2ee7fce9beab689443c",tooltip="See QueryIntAttribute()"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="tinyxml2::XMLElement\l::DoubleAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a10a90c505aea716bf073eea1c97f33b5",tooltip="See IntAttribute()"];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="tinyxml2::XMLAttribute\l::QueryFloatValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLAttribute.html#a049dea6449a6259b6cfed44a9427b607",tooltip="See QueryIntValue."];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="tinyxml2::XMLElement\l::QueryFloatAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#acd5eeddf6002ef90806af794b9d9a5a5",tooltip="See QueryIntAttribute()"];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="tinyxml2::XMLElement\l::FloatAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#ab1f4be2332e27dc640e9b6abd01d64dd",tooltip="See IntAttribute()"];
+  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="tinyxml2::XMLAttribute\l::QueryInt64Value",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLAttribute.html#a4e25344d6e4159026be34dbddf1dcac2",tooltip="See QueryIntValue."];
+  Node12 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="tinyxml2::XMLElement\l::QueryInt64Attribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a7c0955d80b6f8d196744eacb0f6e90a8",tooltip="See QueryIntAttribute()"];
+  Node13 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="tinyxml2::XMLElement\l::Int64Attribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a66d96972adecd816194191f13cc4a0a0",tooltip="See IntAttribute()"];
+  Node1 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="tinyxml2::XMLAttribute\l::QueryIntValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLAttribute.html#a6d5176260db00ea301c01af8457cd993",tooltip=" "];
+  Node15 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="tinyxml2::XMLElement\l::QueryIntAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a8a78bc1187c1c45ad89f2690eab567b1",tooltip=" "];
+  Node16 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node17 [label="tinyxml2::XMLElement\l::IntAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a95a89b13bb14a2d4655e2b5b406c00d4",tooltip=" "];
+  Node1 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node18 [label="tinyxml2::XMLElement\l::QueryStringAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#adb8ae765f98d0c5037faec48deea78bc",tooltip="See QueryIntAttribute()"];
+  Node1 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node19 [label="tinyxml2::XMLAttribute\l::QueryUnsigned64Value",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLAttribute.html#af793c695e7ee65cf20b8010d38b1d157",tooltip="See QueryIntValue."];
+  Node19 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node20 [label="tinyxml2::XMLElement\l::QueryUnsigned64Attribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a13dd590b5d3958ce2ed79844aacd9405",tooltip="See QueryIntAttribute()"];
+  Node20 -> Node21 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node21 [label="tinyxml2::XMLElement\l::Unsigned64Attribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a226502bab8f1be7ede1fdd255398eb85",tooltip="See IntAttribute()"];
+  Node1 -> Node22 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node22 [label="tinyxml2::XMLAttribute\l::QueryUnsignedValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLAttribute.html#a48a7f3496f1415832e451bd8d09c9cb9",tooltip="See QueryIntValue."];
+  Node22 -> Node23 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node23 [label="tinyxml2::XMLElement\l::QueryUnsignedAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a26fc84cbfba6769dafcfbf256c05e22f",tooltip="See QueryIntAttribute()"];
+  Node23 -> Node24 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node24 [label="tinyxml2::XMLElement\l::UnsignedAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#afea43a1d4aa33e3703ddee5fc9adc26c",tooltip="See IntAttribute()"];
+  Node1 -> Node25 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node25 [label="tinyxml2::XMLElement\l::ShallowEqual",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLElement.html#a61ffd7bf918a9db4aa6203d855ac5ec2",tooltip=" "];
+  Node1 -> Node26 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node26 [label="tinyxml2::XMLPrinter\l::VisitEnter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtinyxml2_1_1XMLPrinter.html#a169b2509d8eabb70811b2bb8cfd1f5d1",tooltip="Visit an element."];
+}
