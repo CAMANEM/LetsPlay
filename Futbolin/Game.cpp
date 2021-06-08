@@ -32,6 +32,8 @@ void Game::initGame(int squares, int score) {
     rival_score = 0;
     black = new Ball(sf::Vector2f(750, 400), 9.f, sf::Color::Black);
     board = new Board(squares);
+    backtracking.reset();
+    backtracking.setObstacles(board->getyPos(), board->getxPos(), squares);
     move = false;
 }
 
@@ -49,6 +51,12 @@ void Game::update(){
     updateGameLogic();
 
     updateAllCollisions();
+
+    if(!isPlayerTurn && secondFlag){
+        backtracking.reset();
+        backtracking.road(y_ball_position, x_ball_position);
+        secondFlag = false;
+    }
 
 }
 
@@ -196,6 +204,9 @@ void Game::updateGameLogic(){
 
         checkBallSquare(a, b);
         isPlayerTurn = !isPlayerTurn;
+        if(!secondFlag){
+            secondFlag = true;
+        }
 
         if((103.0 < a && a < 205.0) && (291 < b && b < 512)){
             black->setPosition(750.f, 300.f);
@@ -244,6 +255,50 @@ void Game::render(){
     board->render(window);
 
     window->draw(*black);
+
+    if (!isPlayerTurn){
+        Pathnode* start = backtracking.path.getHead();
+        for (start; start->getNext() != nullptr; start =  start->getNext()) {
+
+            int w = start->getY();
+            int x = start->getX();
+            int y = start->getNext()->getY();
+            int z = start->getNext()->getX();
+
+            if ((y == 4 and z ==11)or (y == 3 and z ==12)or(y == 5 and z ==12)or(y == 2 and z ==12)or(y == 6 and z ==12)  or (w == 4 and x ==11)or (w == 3 and x ==12)or(w == 5 and x ==12)or (w == 2 and x ==12)or(w == 6 and x ==12)){
+                break;
+            }
+
+//            if(w==0){
+//                w = 1;
+//            }
+//            if(x==0){
+//                x = 1;
+//            }
+//            if(y==0){
+//                y = 1;
+//            }
+//            if(z==0){
+//                z = 1;
+//            }
+            sf::Vertex line_toDraw[] = {
+                    sf::Vertex(sf::Vector2f(w * 99.615384f + 73.7777777f / 2 + 116.5f,
+                                            x * 73.7777777f + 99.615384f / 2 + 55.5f)),
+                    sf::Vertex(sf::Vector2f(y * 99.615384f + 73.7777777f / 2 + 116.5f,
+                                            z * 73.7777777f + 99.615384f / 2 + 55.5f))
+//                sf::Vertex(sf::Vector2f(start->getY() * 73.7777777f + 99.615384f / 2 + 55.5f,
+//                                        start->getX() * 99.615384f + 73.7777777f / 2 + 116.5f)),
+//                sf::Vertex(sf::Vector2f(start->getNext()->getY() * 73.7777777f + 99.615384f / 2 + 55.5f,
+//                                        start->getNext()->getX() * 99.615384f + 73.7777777f / 2 + 116.5f))
+            };
+            window->draw(line_toDraw, 2, sf::Lines);
+
+
+        //start = start->getNext();
+
+        }
+
+    }
 
     if (dragged)
     {

@@ -23,33 +23,92 @@
 class Board
 {
 public:
+
+    /*!
+     * @brief Constructor para el tablero.
+     * @param squares Cantidad de obstaculos a dibujar.
+     */
     explicit Board(int squares);
+
+    /*!
+     * @brief Destructor para la clase.
+     */
     ~Board();
 
+    /*!
+     * @brief Lineas existentes con las que la bola puede colisionar.
+     * @return Vector de lineas.
+     */
     std::vector <Line> getBorderLines();
+
+    /*!
+     * @brief Getter para las coordenadas x donde has obstaculos.
+     * @return Casillas x.
+     */
     std::vector <int> getxPos();
+
+    /*!
+     * @brief Getter para las coordenadas y donde has obstaculos.
+     * @return Casillas y.
+     */
     std::vector <int> getyPos();
 
-
+    /*!
+     * @brief Updater.
+     */
     void update();
+
+    /*!
+     * @brief Funcion que se encarga de resover el pathfinding usando A*
+     * @param isTurn Bool correspondiente a si hay que resolver o no el grid.
+     * @param x Posicion x inicial.
+     * @param y Posicion y inicial.
+     */
     void A_Star(bool isTurn, int x, int y);
+
+    /*!
+     * @brief Funcion que se encarga de dibujar en pantalla el tablero.
+     * @param target Ventana sobre la cual trabajar.
+     */
     void render(sf::RenderTarget* target);
+
 private:
+    std::vector <int> xPos;
+    std::vector <int> yPos;
     bool isPlayerTurn;
     sf::Sprite sprite;
     sf::Texture texture;
     std::vector <Line> lines;
-    std::vector <int> xPos;
-    std::vector <int> yPos;
     Squares *Grid = nullptr;
 
     Squares *start = nullptr;
     Squares *end = nullptr;
 
+    /*!
+     * @brief Inicializador para las lineas exteriores del tablero.
+     */
     void initBorderLines();
+
+    /*!
+     * @brief Inicializador para los obstaculos en la parte derecha del tablero.
+     * @param squares Cantidad de obstaculos.
+     */
     void initSquaresR(int squares);
+
+    /*!
+     * @brief Inicializador para el obstaculo en medio del tablero.
+     */
     void initSquaresM();
+
+    /*!
+     * @brief Inicializador para los obstaculos en la parte izquierda del tablero.
+     * @param squares Cantidad de obstaculos.
+     */
     void initSquaresL(int squares);
+
+    /*!
+     * @brief Inicializador para la cuadricula con la que trabaja A*
+     */
     void initGrid();
 };
 

@@ -8,6 +8,7 @@
 #include "Board.h"
 #include "Ball.h"
 #include <SFML/Window/VideoMode.hpp>
+#include "../Backtracking/Backtracking.h"
 
 class Game {
 public:
@@ -42,6 +43,10 @@ private:
     int rival_score;
     int x_ball_position = -1;
     int y_ball_position = -1;
+
+    Backtracking backtracking;
+
+    bool secondFlag = true;
 
     sf::Vector2f m_mouse;
     sf::VideoMode videoMode;
