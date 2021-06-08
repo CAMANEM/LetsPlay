@@ -9,7 +9,7 @@
 
 void Ball::initVariables(){
     MAX_POINTS = 20;
-    VISCOSITY = 0.5f;
+    VISCOSITY = 0.9f;
     COLOR_SHAPE = sf::Color::Red;
 
     m_radius = 10.f;

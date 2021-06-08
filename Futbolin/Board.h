@@ -32,8 +32,10 @@ public:
 
 
     void update();
+    void A_Star(bool isTurn, int x, int y);
     void render(sf::RenderTarget* target);
 private:
+    bool isPlayerTurn;
     sf::Sprite sprite;
     sf::Texture texture;
     std::vector <Line> lines;
@@ -44,7 +46,6 @@ private:
     Squares *start = nullptr;
     Squares *end = nullptr;
 
-    void A_Star();
     void initBorderLines();
     void initSquaresR(int squares);
     void initSquaresM();

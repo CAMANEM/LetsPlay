@@ -42,6 +42,9 @@ void Game::update(){
     pollEvents();
     black->update(*window, deltaTime);
 
+    board->A_Star(isPlayerTurn, x_ball_position, y_ball_position);
+
+
     updateDirectionLine();
     updateGameLogic();
 
@@ -163,13 +166,37 @@ void Game::collisionCircleLine(Ball *circle, Line *line){
 //    }
 //}
 
+void Game::checkBallSquare(float x, float y) {
+    int x_square = 0;
+    int y_square = 0;
+
+    while(103+(99.615384f*x_square)<x){
+        x_square++;
+    }
+    while(70+(73.7777777f*y_square)<y){
+        y_square++;
+    }
+
+
+    x_ball_position = x_square-1;
+    y_ball_position = y_square-1;
+}
+
 void Game::updateGameLogic(){
+
+
 
     if (move && draggedBall->getVelocity() == sf::Vector2f(0.f, 0.f))
     {
+        //aqui tengo que cambiar los turnos
+
         move = false;
         float a = draggedBall->getPosition().x;
         float b = draggedBall->getPosition().y;
+
+        checkBallSquare(a, b);
+        isPlayerTurn = !isPlayerTurn;
+
         if((103.0 < a && a < 205.0) && (291 < b && b < 512)){
             black->setPosition(750.f, 300.f);
             rival_score = rival_score + 1;

@@ -179,7 +179,12 @@ void Board::update(){
 
 }
 
-void Board::A_Star() {
+void Board::A_Star(bool isTurn, int x, int y) {
+    isPlayerTurn = isTurn;
+    if(x != -1, y != -1){
+        start=&Grid[y*13+x];
+    }
+
     for (int x = 0; x < 13; x++){
         for (int y = 0; y < 9; y++){
             Grid[y*13 + x].beenVisited = false;
@@ -235,38 +240,22 @@ void Board::A_Star() {
 }
 
 void Board::render(sf::RenderTarget* target){
-    //target->draw(sprite);
-    A_Star();
-//    for (int x = 0; x < 13; x++){
-//        for (int y = 0; y < 9; y++){
-//            sf::RectangleShape square(sf::Vector2f(59.615384f,38.7777777f));
-//            square.setPosition(125.5f +  (x * 50) + (x * 49.5f), 86.94f +  (y * 50) + (y * 23.44f));
-//
-//
-//            if (&Grid[y * 13 + x] == start){
-//                square.setFillColor(sf::Color(0, 220, 0));
-//            } else if (&Grid[y * 13 + x] == end){
-//                square.setFillColor(sf::Color(0, 0, 0));
-//            }else if (!Grid[y * 13 + x].isObstacle){
-//                square.setFillColor(sf::Color(254, 154, 39));
-//            }else {
-//                square.setFillColor(sf::Color(232, 220, 0));
-//            }
-//
-//
-//            target->draw(square);
-//        }
-//    }
 
-    Squares *temp = end;
-    while (temp->Previous != nullptr){
-        sf::Vertex line[] = {
-                sf::Vertex(sf::Vector2f(temp->x*99.615384f + 73.7777777f/2 + 116.5f, temp->y*73.7777777f + 99.615384f/2 + 55.5f)),
-                sf::Vertex(sf::Vector2f(temp->Previous->x*99.615384f + 73.7777777f/2 + 116.5f, temp->Previous->y*73.7777777f + 99.615384f/2 + 55.5f))
-        };
-        target->draw(line, 2, sf::Lines);
+    //A_Star(x, y);
 
-        temp = temp->Previous;
+    if(isPlayerTurn) {
+        Squares *temp = end;
+        while (temp->Previous != nullptr) {
+            sf::Vertex line[] = {
+                    sf::Vertex(sf::Vector2f(temp->x * 99.615384f + 73.7777777f / 2 + 116.5f,
+                                            temp->y * 73.7777777f + 99.615384f / 2 + 55.5f)),
+                    sf::Vertex(sf::Vector2f(temp->Previous->x * 99.615384f + 73.7777777f / 2 + 116.5f,
+                                            temp->Previous->y * 73.7777777f + 99.615384f / 2 + 55.5f))
+            };
+            target->draw(line, 2, sf::Lines);
+
+            temp = temp->Previous;
+        }
     }
     for (auto i : lines)
     {

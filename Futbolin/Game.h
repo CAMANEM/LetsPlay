@@ -22,6 +22,7 @@ public:
     Ball* draggedBall;
     bool dragged;
     bool move;
+    bool isPlayerTurn = true;
     sf::Clock clock;
 
 
@@ -31,12 +32,16 @@ public:
     //void collisionCircles(Ball* ball1, Ball* ball2);
     void updateGameLogic();
 
+    void checkBallSquare(float x, float y);
+
 private:
     sf::RectangleShape LeftGoal;
     sf::RectangleShape RightGoal;
     int max_score;
     int player_score;
     int rival_score;
+    int x_ball_position = -1;
+    int y_ball_position = -1;
 
     sf::Vector2f m_mouse;
     sf::VideoMode videoMode;
