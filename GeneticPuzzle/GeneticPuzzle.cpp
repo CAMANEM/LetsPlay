@@ -5,7 +5,7 @@
 #include "GeneticPuzzle.h"
 #include <bits/stdc++.h>
 #include <XML.h>
-
+#include <boost/algorithm/string.hpp>
 
 GeneticPuzzle::GeneticPuzzle(const int _puzzle_size) {
 
@@ -30,19 +30,32 @@ void GeneticPuzzle::firstGeneration(int population_size) {
     n_generation = 0;
     sortPopulation( 0, population.size()-1);
 
-    XML xml = XML();
 
     std::string paXML;
     std::vector<int> elVector = showPopulation();
     for (int i = 0; i < elVector.size(); i++) {
         paXML.append(std::to_string(elVector.at(i)));
+        paXML.append(",");
     }
+    paXML.pop_back();
     xml.Construction(paXML);
-    std::cout << xml.Population(0) << std::endl;
+
+//    // getter
+//    std::vector<std::string> result;
+//    boost::split(result, xml.Population(0), boost::is_any_of(","));
+//    std::vector<int> genbest;
+//    for (int i = 0; i < result.size(); i++) {
+//        genbest.push_back(std::stoi(result[i]));
+//        std::cout << result[i] << std::endl;
+//        std::cout << genbest.at(i) << std::endl;
+//    }
+
+//    std::cout << xml.Population(0) << std::endl;
 
 //    std::cout << xml.Population(1) << std::endl;
 
-    xml.Construction(population.at(0)->bits_to_string(&total_bits));
+//    xml.Construction(population.at(0)->bits_to_string(&total_bits));
+//    getFromFile(0);
 
 
 }
@@ -138,6 +151,17 @@ void GeneticPuzzle::newGeneration() {
         doomsday();
         firstGeneration(200);
     }
+
+//    xml.Construction(population.at(0)->bits_to_string(&total_bits));
+
+    std::string paXML;
+    std::vector<int> elVector = showPopulation();
+    for (int i = 0; i < elVector.size(); i++) {
+        paXML.append(std::to_string(elVector.at(i)));
+        paXML.append(",");
+    }
+    paXML.pop_back();
+    xml.Construction(paXML);
 }
 
 void GeneticPuzzle::doomsday() {
@@ -187,4 +211,53 @@ bool GeneticPuzzle::finished() {
         return true;
     }
     return false;
+}
+
+std::vector<int> GeneticPuzzle::getFromFile(int n_generation) {
+    boost::dynamic_bitset<> genes;
+    genes.resize(total_bits);
+    int genesIndex = total_bits-1;
+    std::string best = xml.Population(n_generation);
+    int index = best.size() - 1;
+    std::string num;
+
+    while (!best.empty()){
+        std::string comparator = std::to_string(best[index]);
+        if (std::strcmp(&best.at(index), ",")){
+            std::bitset<32> newNUM(std::stoi(comparator));
+            for (int i = 31; 0 <= i; i--) {
+//                std::cout << "aaaaaa" << std::endl;
+//                std::cout << "entró" << std::endl;
+                genes.set(genesIndex, newNUM[i]);
+                genesIndex--;
+            }
+            best.erase(index, 1);
+            num = "";
+            index--;
+        }
+        else {
+            std::cout << "aaaaaa" << num << std::endl;
+            num+= best[index];
+
+            best.erase(index, 1);
+            index--;
+        }
+    }
+    std::cout << "genescnvrt: " << genes << std::endl;
+
+    std::vector<int> puzzle_order;
+    puzzle_order.push_back(1);
+    return puzzle_order;
+}
+
+std::vector<int> GeneticPuzzle::getFromFile2() {
+    std::vector<std::string> result;
+    boost::split(result, xml.Population(0), boost::is_any_of(","));
+    std::vector<int> genbest;
+    for (int i = 0; i < result.size(); i++) {
+//        std::cout << result[i] << std::endl;
+        genbest.push_back(std::stoi(result[i]));
+        std::cout << genbest.at(i) << std::endl;
+    }
+    return genbest;
 }

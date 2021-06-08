@@ -5,6 +5,7 @@
 #ifndef LETSPLAY_GENETICPUZZLE_H
 #define LETSPLAY_GENETICPUZZLE_H
 
+#include <XML.h>
 #include "Chromosome.h"
 
 
@@ -16,6 +17,7 @@ private:
     int puzzle_size;
     int bits_per_gene;
     int total_bits;
+    XML xml = XML();
 
     /**
      * @brief Ordena el vector con la poplación de forma descendente mediante QuickSort
@@ -45,6 +47,10 @@ public:
     std::vector<int> showPopulation();
 
     bool finished();
+
+    std::vector<int> getFromFile(int n_generation);
+
+    std::vector<int> getFromFile2();
 };
 
 
