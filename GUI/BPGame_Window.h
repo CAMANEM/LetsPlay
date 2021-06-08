@@ -10,6 +10,9 @@
 
 class BPGame_Window {
 
+private:
+    bool play = false;
+
 public:
     BPGame_Window();
 
@@ -18,6 +21,14 @@ public:
      * @param _window this is a reference of the window created in Main_Window
      */
     void Run(sf::RenderWindow* _window);
+
+    /**
+     * @brief It is called if the mouse is left clicked, and changes the
+     * window if the click was over a button
+     * @param mouse_pos Is the mouse position when clicked
+     * @override
+     */
+    void clickButton(sf::Vector2i mouse_pos);
 };
 
 

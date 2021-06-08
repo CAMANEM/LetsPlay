@@ -5,12 +5,12 @@
 
 int main() {
 
-//    Main_Window* mainWindow = new Main_Window();
-//    mainWindow->Run();
+    Main_Window* mainWindow = new Main_Window();
+    mainWindow->Run();
 
-    XML hp = XML();
-    hp.Construction("Fernando");
-    hp.Modification("Fernando", "NAME", "PABLO");
+//    XML hp = XML();
+//    hp.Construction("Fernando");
+//    hp.Modification("Fernando", "NAME", "PABLO");
     //hp.Elimination("Fernando");
     return 0;
 }
