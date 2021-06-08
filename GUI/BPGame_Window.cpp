@@ -3,6 +3,7 @@
 //
 
 #include "BPGame_Window.h"
+#include "../Futbolin/Game.h"
 
 BPGame_Window::BPGame_Window() {
 
@@ -14,8 +15,14 @@ void BPGame_Window::Run(sf::RenderWindow *_window) {
 
 
     sf::Event event;
+    Game game = Game(17,2);
+
 
     while (!back_button && _window->isOpen()) {
+
+        game.update();
+        game.render();
+
         while (_window->pollEvent(event)) {
 
             switch (event.type) {
@@ -28,6 +35,7 @@ void BPGame_Window::Run(sf::RenderWindow *_window) {
                         back_button = true;
                     }
             }
+
         }
         _window->clear();
         _window->display();
